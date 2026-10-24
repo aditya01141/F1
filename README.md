@@ -1,140 +1,171 @@
-# FORMULA 1 RACE INTELLIGENCE
+# 🏎️ FORMULA 1 RACE INTELLIGENCE DASHBOARD
+### High-Performance Motorsport Telemetry & Championship Analytics Engine
+**Author & Lead Architect:** [Atharv Prakash Malviya](https://public.tableau.com/app/profile/atharv.malviya)  
+**Tableau Public Profile:** `atharv malviya`  
+**Published Workbook:** `F1 Race Intelligence Dashboard_2`  
 
-A production-grade, single-page Formula 1 championship analytics platform built in pure **HTML5, CSS3, and vanilla JavaScript**. The project recreates the official reference design and Tableau telemetry dashboards in a strict **Formula 1 Black & Red** theme (`#0a0a0a` + `#e10600`).
-
----
-
-## 🏎️ Features & Components
-
-1. **F1 5-Light Gantry Preloader ("Lights Out")**:
-   - 5 red racing lights illuminate sequentially across the gantry.
-   - Suspense pause before turning off simultaneously with *"LIGHTS OUT AND AWAY WE GO!"* and fading into the hero section.
-
-2. **Hero Section (`#home`)**:
-   - Split-tone design: deep black with red horizontal scanlines on the left, blending into a dramatic high-contrast modern glass skyscraper skyline (`assets/hero-skyline.jpg`) on the right.
-   - Live badge `● LIVE RACE ANALYTICS PLATFORM` (pulsing red beacon).
-   - Typography: **FORMULA <span style="color:#e10600">1</span> RACE INTELLIGENCE DASHBOARD** in Orbitron.
-   - Primary `[VIEW DASHBOARD]` & Secondary `[EXPLORE STORY]` buttons.
-   - Glass bordered stats box with animated count-up numbers:
-     - `75+` SEASONS ANALYZED
-     - `1K+` RACES COVERED
-     - `20` ACTIVE DRIVERS
-     - `10` CONSTRUCTORS
-   - Animated mouse scroll indicator.
-
-3. **Project Overview (`#project`)**:
-   - Animated SVG race circuit card:
-     - Dark track surface ribbon with dashed red racing line.
-     - Glowing red car dot traveling smoothly around the circuit in an infinite loop.
-     - Sector markers `S1` (yellow `#ffd400`), `S2` (cyan `#00e5ff`), and `S3` (orange `#ff8000`).
-     - Green `DRS` straight acceleration zone.
-     - 6 pill tags: DATA ANALYTICS, TABLEAU, RACE STRATEGY, VISUALIZATION, CHAMPIONSHIP, F1 DATASET.
-   - 5-item telemetry architecture list with red-tinted icon boxes:
-     - Global Race Overview
-     - Driver Performance Metrics
-     - Constructor Championship Battle
-     - Pit Stop Strategy Analysis
-     - Championship Success Prediction
-   - `[⚡ EXPLORE DASHBOARD]` call-to-action button.
-
-4. **Intelligence Dimensions (`#insights`)**:
-   - Section header with red diamond divider (`◆`).
-   - Infinite-scrolling `LIVE DATA` marquee ticker featuring real telemetry and championship facts from the dataset (pauses on hover).
-   - 3×2 grid of dimension cards with red icon tiles and `→` footer metrics:
-     - Circuit Analysis (`→ 24 CIRCUITS MAPPED`)
-     - Lap Time Breakdown (`→ MILLISECOND PRECISION`)
-     - Tire Strategy (`→ 5 COMPOUND TYPES`)
-     - Driver Head-to-Head (`→ 20 DRIVERS COMPARED`)
-     - Points Progression (`→ SEASON-LONG VIEW`)
-     - Weather & Safety Cars (`→ INCIDENT & SAFETY METRICS`)
-
-5. **Race Intelligence Dashboard (`#dashboard`)**:
-   - macOS window frame with red/yellow/green control dots and `TABLEAU PUBLIC` pill badge.
-   - High-resolution fallback screenshot (`assets/dashboard-preview.png`) displaying the full 8-panel telemetry layout with zero cropping.
-   - Live KPI summary strip: `Competing Teams: 10`, `Seasons in Play: 17`, `Race Outcomes Logged: 6,464`, `Circuits Showcased: 29`.
-   - `[Open full screen ↗]` button.
-
-6. **Formula 1 Race Intelligence: Story (`#story`)**:
-   - Window frame with `● TABLEAU STORY` green pill badge (`#22c55e`).
-   - High-resolution story preview (`assets/story-preview.png`).
-   - 7-point interactive chapter navigator that dynamically updates narrative telemetry insights:
-     1. Global Driver Distribution Across Grand Prix Nations
-     2. Country-wise Race Participation
-     3. Team Championship Performance Analysis
-     4. Driver Reliability Analysis
-     5. Podium Achievements by Driver and Team
-     6. Tyre Compound Usage Distribution
-     7. Team Performance Ranking
-
-7. **Telemetry & Dashboard Gallery (`#gallery`)**:
-   - Grid of reference captures and dashboard interfaces.
-   - Interactive Lightbox with zoom, keyboard navigation (<kbd>←</kbd> / <kbd>→</kbd> / <kbd>Esc</kbd>), and next/prev controls.
-
-8. **Key Findings & Charts (`#insights-data`)**:
-   - 6 statistical insight cards computed from the dataset:
-     - *Championship Domination*: Lewis Hamilton & Mercedes AMG (6 hybrid titles, 4,491 pts).
-     - *Constructor Supremacy*: Red Bull Racing (8,006 pts).
-     - *Tyre Compound Superiority*: Soft compound represents 31.52% of 3,814 telemetry laps.
-     - *Pit Lane Precision*: 2.18s record stop by Scuderia Ferrari.
-     - *Global Circuit Footprint*: Bahrain leads with 2,168 logged outcomes.
-     - *Reliability & Attrition*: 91.4% grid completion rate.
-   - 4 dark-themed Chart.js visualizations:
-     - **Driver Performance Leaderboard** (Top 8 drivers bar chart matching Tableau).
-     - **Team Performance Ranking** (Horizontal bar chart).
-     - **Tyre Compound Share** (Doughnut chart: Soft 31.52%, Medium 30.78%, Hard 30.36%, Inter 7.34%).
-     - **Driver Reliability & DNF Attrition** (Stacked bar chart by failure cause).
-
-9. **Driver Performance Telemetry Grid (`#drivers`)**:
-   - Real-time search filter by driver name or constructor.
-   - Season filter dropdown (`All Seasons`, `2026`, `2025`, `2024`, `2023`, `2022`, `2021`, `2020`).
-   - Sort dropdown (`Highest Points`, `Most Wins`, `Most Podiums`, `Pole Positions`, `Least DNFs`).
-   - Driver cards with team-specific accent stripes, champion crown badges, points, and win/podium conversion progress bars.
-
-10. **Race Intelligence Terminal (`#contact`)**:
-    - Paddock contact information and social links.
-    - Form with client-side validation, transmitting button animation, and toast feedback.
-
-11. **Footer & Global Controls**:
-    - Sticky glass navbar with active section highlighting and mobile drawer.
-    - Floating back-to-top button.
-    - Official FIA/F1 educational disclaimer.
+[![Tableau Public](https://img.shields.io/badge/Tableau_Public-Live_Dashboard-E97627?style=for-the-badge&logo=tableau&logoColor=white)](https://public.tableau.com/views/F1RaceIntelligenceDashboard_2/FORMULA1RACEINTELLIGENCEDASHBOARD?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+[![Tableau Story](https://img.shields.io/badge/Tableau_Story-9--Scene_Narrative-22C55E?style=for-the-badge&logo=tableau&logoColor=white)](https://public.tableau.com/shared/H8573444D?:display_count=n&:origin=viz_share_link)
+[![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![Flask](https://img.shields.io/badge/Flask-Web_Service-000000?style=for-the-badge&logo=flask&logoColor=white)](https://palletsprojects.com/p/flask/)
+[![Theme](https://img.shields.io/badge/Theme-F1_Dark_Obsidian_%26_Crimson-E10600?style=for-the-badge)](#)
 
 ---
 
-## 📁 File Structure
+## 📌 Project Overview
+
+The **Formula 1 Race Intelligence Dashboard** is an enterprise-grade motorsport telemetry platform that translates **17 seasons of racing data (2010–2026)**, **6,464 race outcomes**, and **~13,750 connected data records** into interactive visual intelligence. 
+
+Combining **Tableau Public**'s analytical power with a responsive **Python Flask** service layer and a broadcast-inspired dark user interface (`#0a0a0f` Obsidian + `#e10600` F1 Crimson), this platform provides team strategists, sports journalists, and racing enthusiasts with instant access to championship trajectories, tyre wear degradation curves, and reliability diagnostics.
+
+---
+
+## 📊 Live Tableau Public Workbooks
+
+* 🏁 **Interactive Telemetry Dashboard:**  
+  [FORMULA 1 RACE INTELLIGENCE DASHBOARD](https://public.tableau.com/views/F1RaceIntelligenceDashboard_2/FORMULA1RACEINTELLIGENCEDASHBOARD?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+* 📖 **9-Scene Championship Narrative Story:**  
+  [Formula 1 Race Intelligence: From Global Overview to Championship Success](https://public.tableau.com/shared/H8573444D?:display_count=n&:origin=viz_share_link)
+
+---
+
+## 🎯 4 Core Operational KPIs
 
 ```
-├── index.html                   # Main production single-page application
-├── style.css                    # Complete F1 black & red design system
-├── script.js                    # Interactivity, Chart.js, lightbox & animations
-├── data.js                      # Pre-computed telemetry object (zero-CORS offline execution)
-├── process_f1_dataset.py        # Python ETL extraction script
-├── F1 Racing Project Dataset.xlsx # Raw Formula 1 project dataset
-├── README.md                    # Project documentation
-├── assets/                      # Production image assets & reference captures
-│   ├── hero-skyline.jpg         # High-contrast Moscow glass skyscraper skyline
-│   ├── dashboard-preview.png    # High-res Tableau Dashboard preview
-│   ├── story-preview.png        # High-res Tableau Story preview
-│   ├── hero-reference.png       # Reference hero capture
-│   ├── project-reference.png    # Reference project capture
-│   ├── dimensions-reference.png # Reference dimensions capture
-│   ├── dashboard-frame-reference.png # Reference dashboard frame
-│   ├── story-frame-reference.png     # Reference story frame
-│   └── track_crop_ref.png       # SVG circuit design reference
-└── data/                        # JSON telemetry exports
-    ├── circuits.json            # 29 circuits data
-    ├── drivers.json             # Driver career & season telemetry
-    ├── f1_intelligence.json     # Master KPIs & aggregates
-    └── insights.json            # Computed analytical findings
++------------------------------------------------------------------------------------+
+| 🏁 Competing Teams: 10              | 📅 Seasons in Play: 17 (2010–2026)           |
++-------------------------------------+----------------------------------------------+
+| 🏎️ Race Outcomes Logged: 6,464      | 🌍 Circuits Showcased: 29                    |
++------------------------------------------------------------------------------------+
 ```
 
 ---
 
-## ⚡ How to Run
+## 🔬 5 Core Telemetry Pillars
 
-### Method 1: Local Server (Currently Running)
-Open your browser and navigate to:
-**http://localhost:3000**
+1. **Global Race Overview:** Multi-season geographic footprint across 29 world circuits, mapping race volumes, track profiles, and continental racing clusters.
+2. **Driver Performance Metrics:** Qualifying pace deltas, race pace progression, dynamic Top-N parameter scoring, and podium conversion ratios.
+3. **Constructor Championship Battle:** Multi-season constructor trajectory highlighting Red Bull Racing (8,006 pts) and Mercedes-AMG (7,790 pts) across hybrid regulations.
+4. **Pit Stop & Tyre Strategy Analysis:** Pirelli compound distribution across 4 specifications (Soft 31.52%, Medium 30.78%, Hard 30.36%, Intermediate 7.34%) and stint degradation modeling.
+5. **Reliability & DNF Diagnostics:** Failure cause classification (Engine, Collision, Transmission, Suspension, Brakes) and attrition dynamics illustrating modern 91.4% grid completion.
 
-### Method 2: Offline Double-Click
-Simply double-click `index.html` in Windows Explorer. All data is embedded in `data.js`, so the application runs with zero CORS issues.
+---
+
+## 📈 9 Unique Tableau Visualizations
+
+The published workbook contains 9 distinct, purpose-built visualizations:
+1. **KPI Summary Cards:** High-level operational metrics (10 Teams, 17 Seasons, 6,464 Outcomes, 29 Circuits).
+2. **Global Driver Distribution Across Grand Prix Nations:** Dark Mapbox geographic projection mapping driver nationalities and racing volumes across 29 host nations.
+3. **Driver Reliability Analysis:** Stacked horizontal bar chart colored by `Dnf Reason` (Engine, Collision, Transmission, Suspension, Brakes, Overheating).
+4. **Driver Performance Leaderboard:** Dynamic vertical bar chart controlled by the `Top N Parameter` (default: 10), led by Hamilton, Verstappen, Leclerc, and Norris.
+5. **Team Performance Ranking:** Horizontal bar chart sorted descending by points ranking constructor supremacy across the hybrid era.
+6. **Team Championship Performance Analysis:** Vertical bar chart from `championship_standings` displaying seasonal dominance shifts.
+7. **Tyre Compound Usage Distribution:** Circular pie chart breaking down Pirelli telemetry: Soft (31.52%), Medium (30.78%), Hard (30.36%), and Inter (7.34%).
+8. **Country-wise Race Participation:** Proportional treemap / highlight table led by Bahrain (2,168), USA (400), Monaco (328), Spain (328), and Brazil (308).
+9. **Podium Achievements by Driver and Team:** Packed bubble chart sized by `SUM(Podiums)` illustrating top-3 finishes by driver and constructor.
+
+---
+
+## 🛠️ Technology Stack & Architecture
+
+```
+Architecture Diagram
++-------------------------------------------------------------------------------+
+|  DATA ENGINEERING LAYER                                                       |
+|  - F1 Racing Project Dataset.xlsx (5 connected sheets, ~13,750 rows)           |
+|  - Python ETL / Data Validation Pipeline                                      |
++-------------------------------------------------------------------------------+
+                                      │
+                                      ▼
++-------------------------------------------------------------------------------+
+|  TABLEAU ANALYTICS ENGINE                                                     |
+|  - Logical Layer Relationships (circuit_id, race_id, season, driver)           |
+|  - Calculated Fields: [DNF Count], [Points Cumulative], [Completion Rate %]   |
+|  - Parameters: [Top N Parameter] (Integer 1-20, default: 10)                  |
+|  - Published to Tableau Public: F1 Race Intelligence Dashboard_2               |
++-------------------------------------------------------------------------------+
+                                      │
+                                      ▼
++-------------------------------------------------------------------------------+
+|  WEB SERVICE & EMBED APPLICATION LAYER                                        |
+|  - Python Flask Web Server (app.py) & REST API endpoints                      |
+|  - Jinja2 Template (templates/index.html) with configurable Tableau URLs      |
+|  - Dark F1 Broadcast UI: HTML5, CSS3 Glassmorphism, Vanilla ES6+, Chart.js    |
+|  - macOS Window Telemetry Frames, Interactive 9-Scene Story Navigator         |
++-------------------------------------------------------------------------------+
+```
+
+---
+
+## ⚡ How to Run the Application
+
+The application supports **both** a full Flask web server and instant offline double-click viewing:
+
+### Method 1: Python Flask Server (Recommended for Evaluation)
+
+1. **Install Python dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+2. **Start the Flask application:**
+   ```bash
+   python app.py
+   ```
+3. **Open in your web browser:**
+   ```
+   http://127.0.0.1:5000
+   ```
+
+### Method 2: Offline Double-Click Execution (Zero Server / Zero CORS)
+
+Simply double-click `index.html` in Windows Explorer or open it in any modern browser. All pre-computed telemetry is bundled in `data.js`, and live Tableau embeds will automatically stream over HTTPS.
+
+---
+
+## 🔌 REST API Endpoints (Flask)
+
+| Endpoint | Method | Response Description |
+| :--- | :---: | :--- |
+| `/api/health` | `GET` | Service status, author name, and version info. |
+| `/api/config` | `GET` | Current active Tableau Public URLs and metadata. |
+| `/api/telemetry` | `GET` | Aggregated 4 Core KPIs and analytical dimensions. |
+| `/api/circuits` | `GET` | Catalog of all 29 world circuits with coordinates. |
+| `/api/drivers` | `GET` | Driver career records and telemetry rankings. |
+
+---
+
+## 📁 Repository Structure
+
+```
+├── app.py                     # Primary Flask web application server
+├── templates/
+│   └── index.html             # Flask Jinja2 web template
+├── static/
+│   ├── css/style.css          # F1 dark telemetry stylesheet
+│   ├── js/script.js           # Interactive controller & Tableau embed injector
+│   ├── js/data.js             # Pre-compiled telemetry data object
+│   ├── assets/                # Preview images & reference captures
+│   └── data/                  # Granular JSON telemetry files
+├── requirements.txt           # Python dependency specifications
+├── index.html                 # Standalone static distribution file
+├── style.css                  # Design system stylesheet
+├── script.js                  # Frontend controller logic
+├── data.js                    # Telemetry data feed
+├── F1 Racing Project Dataset.xlsx # Raw 5-sheet Formula 1 dataset
+├── PROJECT_DOCUMENTATION.md   # Comprehensive academic project documentation
+└── README.md                  # This README file
+```
+
+---
+
+## 👤 Author & Credits
+
+* **Author & Lead Developer:** **Atharv Prakash Malviya**
+* **Tableau Public:** [@atharv malviya](https://public.tableau.com/app/profile/atharv.malviya)
+* **Academic Submission:** October 2026
+
+---
+
+## ⚖️ Educational Disclaimer
+
+*This project is an independent educational and academic analytics platform developed by Atharv Prakash Malviya. Formula 1, F1, FIA, and related marks are trademarks of Formula One Licensing B.V. Not affiliated with or endorsed by Formula 1 companies.*

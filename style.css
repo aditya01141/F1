@@ -2199,3 +2199,271 @@ textarea.form-control {
     display: none !important;
   }
 }
+
+
+/* =============================================================================
+   ATHARV PRAKASH MALVIYA - CUSTOM TELEMETRY STYLES & EMBED ENHANCEMENTS
+   ============================================================================= */
+
+/* Author Credit Badge in Hero */
+.hero-author-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(14, 14, 20, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(225, 6, 0, 0.4);
+  border-radius: 30px;
+  padding: 8px 20px;
+  margin-bottom: 24px;
+  font-size: 13px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(225, 6, 0, 0.12);
+  flex-wrap: wrap;
+}
+
+.hero-author-credit .author-tag {
+  color: #ff3333;
+  font-weight: 700;
+  font-family: var(--font-heading, 'Orbitron', sans-serif);
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.hero-author-credit .author-name {
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.hero-author-credit .author-sep {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.hero-author-credit .author-badge {
+  color: #a0a0b8;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.hero-author-credit .author-badge a {
+  color: #00e5ff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.hero-author-credit .author-badge a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.8);
+}
+
+/* Tertiary Button */
+.btn-tertiary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  padding: 13px 24px;
+  border-radius: 4px;
+  font-family: var(--font-heading, 'Orbitron', sans-serif);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-tertiary:hover {
+  background: rgba(225, 6, 0, 0.16);
+  border-color: #e10600;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(225, 6, 0, 0.35);
+}
+
+/* Embedded Views Switcher Tabs */
+.embed-view-tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.embed-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(18, 18, 24, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #b0b0c0;
+  padding: 12px 26px;
+  border-radius: 30px;
+  font-family: var(--font-heading, 'Orbitron', sans-serif);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.embed-tab-btn:hover {
+  border-color: rgba(225, 6, 0, 0.6);
+  color: #ffffff;
+  background: rgba(30, 20, 24, 0.9);
+  transform: translateY(-2px);
+}
+
+.embed-tab-btn.active {
+  background: linear-gradient(135deg, #e10600 0%, #a00000 100%);
+  color: #ffffff;
+  border-color: #e10600;
+  box-shadow: 0 6px 22px rgba(225, 6, 0, 0.5);
+}
+
+/* Tableau Responsive Viewport & Iframe Container */
+.tableau-iframe-frame {
+  width: 100%;
+  min-height: 860px;
+  height: 860px;
+  background: #0a0a0f;
+  position: relative;
+  overflow: hidden;
+}
+
+.tableau-iframe-frame iframe {
+  width: 100%;
+  height: 860px;
+  min-height: 860px;
+  border: none;
+  display: block;
+  background: #0a0a0f;
+}
+
+.window-viewport {
+  min-height: 860px;
+}
+
+.dashboard-embed-box {
+  min-height: 860px;
+}
+
+/* Micro-interactions on Dimension Cards */
+.dimension-card {
+  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  position: relative;
+}
+
+.dimension-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.dimension-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(225, 6, 0, 0.45);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7), 0 0 25px rgba(225, 6, 0, 0.18);
+}
+
+.dimension-card:hover::before {
+  background: linear-gradient(90deg, transparent, #e10600, transparent);
+}
+
+.dimension-card:hover .dimension-icon-tile {
+  background: #e10600;
+  color: #ffffff;
+  transform: scale(1.08) rotate(3deg);
+  box-shadow: 0 0 20px rgba(225, 6, 0, 0.6);
+}
+
+.dimension-card:hover .dimension-stat {
+  color: #ff4d4d;
+  letter-spacing: 1.5px;
+}
+
+/* 9 Scene Chips Navigator styling */
+.story-chips-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.story-chip {
+  transition: all 0.2s ease;
+}
+
+.story-chip:hover {
+  border-color: rgba(225, 6, 0, 0.5);
+  background: rgba(225, 6, 0, 0.1);
+  color: #ffffff;
+}
+
+/* Action button secondary styling */
+.btn-action-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  padding: 10px 18px;
+  border-radius: 4px;
+  font-family: var(--font-heading, 'Orbitron', sans-serif);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-action-outline:hover {
+  background: rgba(225, 6, 0, 0.2);
+  border-color: #e10600;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(225, 6, 0, 0.3);
+}
+
+/* Responsive Embed Adjustments */
+@media (max-width: 992px) {
+  .tableau-iframe-frame,
+  .tableau-iframe-frame iframe,
+  .window-viewport,
+  .dashboard-embed-box {
+    min-height: 700px;
+    height: 700px;
+  }
+}
+
+@media (max-width: 600px) {
+  .tableau-iframe-frame,
+  .tableau-iframe-frame iframe,
+  .window-viewport,
+  .dashboard-embed-box {
+    min-height: 580px;
+    height: 580px;
+  }
+  .hero-author-credit {
+    font-size: 11px;
+    padding: 6px 14px;
+  }
+}

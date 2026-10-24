@@ -1,44 +1,53 @@
 /**
  * FORMULA 1 RACE INTELLIGENCE - INTERACTIVE JAVASCRIPT
  * Comprehensive Frontend Engine & Telemetry Visualizer
+ * Developed by: Atharv Prakash Malviya (Tableau Public: atharv malviya)
  */
 
 // =============================================================================
 // 1. TABLEAU PUBLIC EMBED CONFIGURATION
-// Replace the placeholders below with your live Tableau Public Dashboard & Story URLs
+// Configured for Atharv Prakash Malviya's Published Tableau Public Workbooks
 // =============================================================================
-const DASHBOARD_URL = "PASTE_YOUR_TABLEAU_PUBLIC_DASHBOARD_URL_HERE";
-const STORY_URL = "PASTE_YOUR_TABLEAU_PUBLIC_STORY_URL_HERE";
+const DASHBOARD_URL = "https://public.tableau.com/views/F1RaceIntelligenceDashboard_2/FORMULA1RACEINTELLIGENCEDASHBOARD?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link";
+const STORY_URL = "https://public.tableau.com/shared/H8573444D?:display_count=n&:origin=viz_share_link";
 
-// Story points definitions for interactive chapter navigator
+// 9 Story scenes definitions for interactive chapter navigator
 const STORY_POINTS_DATA = [
   {
-    title: "Global Driver Distribution Across Grand Prix Nations",
-    caption: "Mapping geographic race volume and driver origins across 29 worldwide Grand Prix host circuits. Demonstrates international expansion across the Americas, Middle East, and Asia."
+    title: "Scene 1: KPI Summary Cards (4 Core Operational Metrics)",
+    caption: "Foundation telemetry metrics establishing 10 Competing Teams, 17 Hybrid-Era Seasons (2010–2026), 6,464 Logged Race Outcomes, and 29 Worldwide Circuits."
   },
   {
-    title: "Country-wise Race Participation",
-    caption: "Historical participation concentration: Bahrain leads with 2,168 logged outcomes, followed by Monaco (328), Spain (328), Brazil (308), Canada (308), and the United States (400)."
+    title: "Scene 2: Global Driver Distribution Across Grand Prix Nations",
+    caption: "Dark Mapbox geographic projection mapping global driver origin clusters, international expansion, and race density across 29 worldwide Grand Prix host circuits."
   },
   {
-    title: "Team Championship Performance Analysis",
-    caption: "Tracking Constructor points progression across hybrid regulation cycles. Highlights Red Bull Racing's 8,006 accumulated points and Mercedes AMG's 7,790 championship haul."
+    title: "Scene 3: Country-wise Race Participation",
+    caption: "Participation volume treemap led by Bahrain International Circuit (2,168 outcomes), United States (400), Monaco (328), Spain (328), Brazil (308), and Canada (308)."
   },
   {
-    title: "Driver Reliability & DNF Attrition",
-    caption: "Mechanical versus accident retirement rates. Telemetry reveals 91.4% modern grid completion with street circuits driving 64% of Safety Car and Virtual Safety Car deployments."
+    title: "Scene 4: Team Championship Performance Analysis",
+    caption: "Constructor championship points trajectory across hybrid regulation cycles, featuring Red Bull Racing's 8,006 accumulated haul and Mercedes-AMG's 7,790 points."
   },
   {
-    title: "Podium Achievements by Driver and Team",
-    caption: "Cluster analysis of top-3 finishes across drivers and constructors. Ferrari and Mercedes boast the densest historical clusters alongside Verstappen's modern dominance."
+    title: "Scene 5: Driver Reliability Analysis",
+    caption: "Stacked bar chart breakdown colored by DNF Reason (Engine, Collision, Transmission, Suspension, Brakes), demonstrating a 91.4% modern grid completion benchmark."
   },
   {
-    title: "Tyre Compound Usage Distribution",
-    caption: "Pirelli compound strategy matrix: Soft compound represents 31.52% of all telemetry laps, Medium accounts for 30.78%, Hard for 30.36%, and Intermediate for 7.34%."
+    title: "Scene 6: Driver Performance Leaderboard",
+    caption: "Dynamic Top N vertical bar chart controlled by the Top N Parameter (default: 10), led by Lewis Hamilton (31,147 pts), Max Verstappen (31,126 pts), and Charles Leclerc (27,673 pts)."
   },
   {
-    title: "Team Performance Ranking",
-    caption: "Comprehensive team performance index ranking all 10 active constructors across race pace deltas, pit stop execution consistency, and aerodynamic efficiency metrics."
+    title: "Scene 7: Podium Achievements by Driver and Team",
+    caption: "Packed bubble visualization sized by SUM(Podiums), comparing podium finishing frequency and clustering across top drivers and constructor pairings."
+  },
+  {
+    title: "Scene 8: Tyre Compound Usage Distribution",
+    caption: "Pirelli compound strategy matrix pie chart: Soft compound represents 31.52% of all telemetry laps, Medium accounts for 30.78%, Hard for 30.36%, and Intermediate for 7.34%."
+  },
+  {
+    title: "Scene 9: Team Performance Ranking",
+    caption: "Horizontal bar chart sorted descending by points, ranking all 10 active constructors across race pace deltas, pit stop execution consistency, and aerodynamic efficiency metrics."
   }
 ];
 
@@ -251,7 +260,7 @@ function initCounters() {
             if (customFormat && progress >= 1) {
               el.textContent = customFormat;
             } else {
-              el.textContent = currentVal + suffix;
+              el.textContent = currentVal.toLocaleString() + suffix;
             }
 
             if (progress < 1) {
@@ -271,10 +280,19 @@ function initCounters() {
 // =============================================================================
 // 6. TABLEAU PUBLIC EMBEDDING & FALLBACK HANDLING
 // =============================================================================
+function formatTableauEmbedUrl(url) {
+  if (!url) return "";
+  const base = url.split("?")[0].replace(/\/+$/, "");
+  return `${base}?:embed=yes&:showVizHome=no&:toolbar=yes&:tabs=no&:showAppBanner=false`;
+}
+
 function initTableauEmbeds() {
   const dashboardContainer = document.getElementById("tableauDashboardContainer");
   const storyContainer = document.getElementById("tableauStoryContainer");
-  const fullscreenBtn = document.getElementById("openFullscreenDashboard");
+  const fullscreenDashboardBtn = document.getElementById("openFullscreenDashboard");
+  const fullscreenStoryBtn = document.getElementById("openFullscreenStory");
+  const externalDashboardBtn = document.getElementById("openExternalDashboard");
+  const externalStoryBtn = document.getElementById("openExternalStory");
 
   // Check if live Tableau Dashboard URL is provided
   const isRealDashboardUrl = DASHBOARD_URL && 
@@ -282,11 +300,16 @@ function initTableauEmbeds() {
     !DASHBOARD_URL.includes("PASTE_YOUR_");
 
   if (isRealDashboardUrl && dashboardContainer) {
+    const embedUrl = formatTableauEmbedUrl(DASHBOARD_URL);
     dashboardContainer.innerHTML = `
-      <iframe src="${DASHBOARD_URL}?:embed=yes&:showVizHome=no&:toolbar=no"
-              width="100%" height="100%" frameborder="0"
-              style="border:none; width:100%; height:100%;"
-              title="Tableau Public Formula 1 Race Intelligence Dashboard"></iframe>
+      <div class="tableau-iframe-frame">
+        <iframe src="${embedUrl}"
+                width="100%" height="860" frameborder="0"
+                style="border:none; width:100%; min-height:860px; height:860px; display:block; background:#0a0a0f;"
+                allowfullscreen="true"
+                loading="lazy"
+                title="Tableau Public Formula 1 Race Intelligence Dashboard"></iframe>
+      </div>
     `;
   }
 
@@ -296,31 +319,54 @@ function initTableauEmbeds() {
     !STORY_URL.includes("PASTE_YOUR_");
 
   if (isRealStoryUrl && storyContainer) {
+    const embedUrl = formatTableauEmbedUrl(STORY_URL);
     storyContainer.innerHTML = `
-      <iframe src="${STORY_URL}?:embed=yes&:showVizHome=no&:toolbar=no"
-              width="100%" height="100%" frameborder="0"
-              style="border:none; width:100%; height:100%;"
-              title="Tableau Public Formula 1 Story"></iframe>
+      <div class="tableau-iframe-frame">
+        <iframe src="${embedUrl}"
+                width="100%" height="860" frameborder="0"
+                style="border:none; width:100%; min-height:860px; height:860px; display:block; background:#0a0a0f;"
+                allowfullscreen="true"
+                loading="lazy"
+                title="Tableau Public Formula 1 Story"></iframe>
+      </div>
     `;
   }
 
-  // Fullscreen button
-  if (fullscreenBtn) {
-    fullscreenBtn.addEventListener("click", () => {
+  // Fullscreen & External navigation listeners
+  if (fullscreenDashboardBtn) {
+    fullscreenDashboardBtn.addEventListener("click", () => {
       if (isRealDashboardUrl) {
         window.open(DASHBOARD_URL, "_blank");
       } else {
         const viewport = document.getElementById("dashboardViewport");
         if (viewport) {
           if (!document.fullscreenElement) {
-            viewport.requestFullscreen().catch(() => {
-              window.open("assets/dashboard-preview.png", "_blank");
-            });
+            viewport.requestFullscreen().catch(() => window.open("assets/dashboard-preview.png", "_blank"));
           } else {
             document.exitFullscreen();
           }
         }
       }
+    });
+  }
+
+  if (fullscreenStoryBtn) {
+    fullscreenStoryBtn.addEventListener("click", () => {
+      if (isRealStoryUrl) {
+        window.open(STORY_URL, "_blank");
+      }
+    });
+  }
+
+  if (externalDashboardBtn) {
+    externalDashboardBtn.addEventListener("click", () => {
+      if (isRealDashboardUrl) window.open(DASHBOARD_URL, "_blank");
+    });
+  }
+
+  if (externalStoryBtn) {
+    externalStoryBtn.addEventListener("click", () => {
+      if (isRealStoryUrl) window.open(STORY_URL, "_blank");
     });
   }
 }
