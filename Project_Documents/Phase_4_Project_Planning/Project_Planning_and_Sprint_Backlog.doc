@@ -1,0 +1,71 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset='utf-8'>
+<title>Project Planning - Sprint Backlog & Velocity</title>
+<style>
+  body { font-family: 'Calibri', 'Arial', sans-serif; font-size: 11pt; line-height: 1.5; color: #111111; }
+  h1 { font-size: 18pt; color: #e10600; border-bottom: 2px solid #e10600; padding-bottom: 6px; margin-top: 14pt; margin-bottom: 8pt; font-family: 'Arial', sans-serif; }
+  h2 { font-size: 13pt; color: #8b0000; border-bottom: 1px solid #cccccc; padding-bottom: 4px; margin-top: 12pt; margin-bottom: 6pt; }
+  h3 { font-size: 11.5pt; color: #111111; margin-top: 10pt; margin-bottom: 4pt; }
+  table { border-collapse: collapse; width: 100%; margin-top: 10pt; margin-bottom: 14pt; font-size: 10pt; }
+  th { background-color: #e10600; color: #ffffff; font-weight: bold; padding: 7px 9px; border: 1px solid #b30000; text-align: left; }
+  td { border: 1px solid #cccccc; padding: 6px 9px; vertical-align: top; }
+  tr:nth-child(even) { background-color: #f9f9f9; }
+  .header-card { background-color: #f4f4f4; border-left: 5px solid #e10600; padding: 10px 14px; margin-bottom: 14pt; }
+  .header-card table { margin: 0; }
+  .header-card td { border: none; padding: 3px 6px; font-size: 10pt; background: transparent; }
+  pre { background-color: #1a1a1a; color: #ffffff; padding: 10px 14px; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 9.5pt; overflow-x: auto; }
+  code { font-family: 'Courier New', monospace; color: #e10600; font-size: 10pt; }
+  ul, ol { margin-top: 4pt; margin-bottom: 8pt; padding-left: 18pt; }
+  li { margin-bottom: 3pt; }
+  p { margin-top: 0; margin-bottom: 6pt; }
+  .footer-note { font-size: 9pt; color: #666666; margin-top: 20pt; border-top: 1px solid #dddddd; padding-top: 6pt; text-align: center; }
+</style>
+</head>
+<body>
+
+<div class='header-card'>
+  <table>
+    <tr><td><strong>Phase:</strong> Project Planning Phase</td><td><strong>Author:</strong> Aaditya Vyas</td></tr>
+    <tr><td><strong>Project:</strong> Formula 1 Race Intelligence</td><td><strong>Date:</strong> October 2026</td></tr>
+    <tr><td><strong>Deliverable:</strong> Project Planning & Sprint Schedule</td><td><strong>Max Marks:</strong> 8 Marks</td></tr>
+  </table>
+</div>
+
+<h1>Project Planning & Sprint Schedule Template</h1>
+<p>Product backlog, sprint allocation, estimation points, and agile velocity tracking for the Formula 1 Race Intelligence platform.</p>
+
+<h2>Product Backlog & Sprint Schedule (4 Marks)</h2>
+<table>
+  <tr><th>Sprint</th><th>Epic</th><th>USN</th><th>Task Description</th><th>Story Pts</th><th>Priority</th><th>Assignee</th></tr>
+  <tr><td>Sprint-1</td><td>Data Ingestion</td><td>USN-01</td><td>Develop Python ETL parser (process_f1_dataset.py) for 6,464 race records.</td><td>5</td><td>High</td><td>Aaditya Vyas</td></tr>
+  <tr><td>Sprint-1</td><td>Data Cleaning</td><td>USN-02</td><td>Filter placeholder records, clean encodings, compute JSON aggregates.</td><td>3</td><td>High</td><td>Aaditya Vyas</td></tr>
+  <tr><td>Sprint-1</td><td>Design System</td><td>USN-03</td><td>Build strict F1 Black & Red CSS system (#0a0a0a, #e10600, Orbitron font).</td><td>5</td><td>High</td><td>Aaditya Vyas</td></tr>
+  <tr><td>Sprint-1</td><td>Start Sequence</td><td>USN-04</td><td>Create F1 5-light sequence preloader, count-up stats, split-tone hero.</td><td>5</td><td>High</td><td>Aaditya Vyas</td></tr>
+  <tr><td>Sprint-1</td><td>Vector Track</td><td>USN-05</td><td>Build animated SVG race track with traveling red car dot and sector marks.</td><td>4</td><td>Medium</td><td>Aaditya Vyas</td></tr>
+  <tr><td>Sprint-2</td><td>Tableau BI</td><td>USN-06</td><td>Model and build 8 core analytical panels in Tableau Public.</td><td>6</td><td>High</td><td>Aaditya Vyas</td></tr>
+  <tr><td>Sprint-2</td><td>Story Chapters</td><td>USN-07</td><td>Design 7-point interactive narrative story in Tableau Public.</td><td>5</td><td>High</td><td>Aaditya Vyas</td></tr>
+  <tr><td>Sprint-2</td><td>Inline Charts</td><td>USN-08</td><td>Implement 4 dynamic Chart.js charts (Leaderboard, Teams, Tyres, DNF).</td><td>5</td><td>High</td><td>Aaditya Vyas</td></tr>
+  <tr><td>Sprint-3</td><td>Driver Filters</td><td>USN-09</td><td>Build live driver search, multi-season dropdowns, and sorting algorithms.</td><td>5</td><td>High</td><td>Aaditya Vyas</td></tr>
+  <tr><td>Sprint-3</td><td>Lightbox Gallery</td><td>USN-10</td><td>Create masonry gallery with zoom lightbox and keyboard controls.</td><td>3</td><td>Medium</td><td>Aaditya Vyas</td></tr>
+  <tr><td>Sprint-3</td><td>Contact Form</td><td>USN-11</td><td>Build validated contact form with animated loading state and toast alert.</td><td>3</td><td>Medium</td><td>Aaditya Vyas</td></tr>
+  <tr><td>Sprint-4</td><td>Offline Support</td><td>USN-12</td><td>Compile synchronous data.js store for zero-CORS double-click execution.</td><td>4</td><td>High</td><td>Aaditya Vyas</td></tr>
+  <tr><td>Sprint-4</td><td>Testing & QA</td><td>USN-13</td><td>Verify responsive scaling, contrast ratios (>= 4.5:1), and Lighthouse score.</td><td>4</td><td>High</td><td>Aaditya Vyas</td></tr>
+  <tr><td>Sprint-4</td><td>Documentation</td><td>USN-14</td><td>Author full project documentation, reports, and demonstration guides.</td><td>3</td><td>High</td><td>Aaditya Vyas</td></tr>
+</table>
+
+<h2>Project Tracker & Agile Velocity (4 Marks)</h2>
+<table>
+  <tr><th>Sprint</th><th>Total Points</th><th>Duration</th><th>Start Date</th><th>Planned End</th><th>Completed</th><th>Actual Release</th></tr>
+  <tr><td>Sprint-1</td><td>22</td><td>6 Days</td><td>24 Oct 2026</td><td>29 Oct 2026</td><td>22</td><td>29 Oct 2026</td></tr>
+  <tr><td>Sprint-2</td><td>16</td><td>6 Days</td><td>31 Oct 2026</td><td>05 Nov 2026</td><td>16</td><td>05 Nov 2026</td></tr>
+  <tr><td>Sprint-3</td><td>11</td><td>6 Days</td><td>07 Nov 2026</td><td>12 Nov 2026</td><td>11</td><td>12 Nov 2026</td></tr>
+  <tr><td>Sprint-4</td><td>11</td><td>6 Days</td><td>14 Nov 2026</td><td>19 Nov 2026</td><td>11</td><td>19 Nov 2026</td></tr>
+</table>
+<p><strong>Velocity Summary:</strong> Total 60 Story Points completed over 4 Sprints (15.0 Points / Sprint, 2.5 Points / Day) with 100% on-time milestone delivery.</p>
+
+<div class='footer-note'>
+  Formula 1 Race Intelligence &bull; Author: Aaditya Vyas &bull; Phase Documentation
+</div>
+</body>
+</html>

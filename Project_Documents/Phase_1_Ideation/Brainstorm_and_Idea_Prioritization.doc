@@ -1,0 +1,60 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset='utf-8'>
+<title>Ideation Phase - Brainstorm & Idea Prioritization</title>
+<style>
+  body { font-family: 'Calibri', 'Arial', sans-serif; font-size: 11pt; line-height: 1.5; color: #111111; }
+  h1 { font-size: 18pt; color: #e10600; border-bottom: 2px solid #e10600; padding-bottom: 6px; margin-top: 14pt; margin-bottom: 8pt; font-family: 'Arial', sans-serif; }
+  h2 { font-size: 13pt; color: #8b0000; border-bottom: 1px solid #cccccc; padding-bottom: 4px; margin-top: 12pt; margin-bottom: 6pt; }
+  h3 { font-size: 11.5pt; color: #111111; margin-top: 10pt; margin-bottom: 4pt; }
+  table { border-collapse: collapse; width: 100%; margin-top: 10pt; margin-bottom: 14pt; font-size: 10pt; }
+  th { background-color: #e10600; color: #ffffff; font-weight: bold; padding: 7px 9px; border: 1px solid #b30000; text-align: left; }
+  td { border: 1px solid #cccccc; padding: 6px 9px; vertical-align: top; }
+  tr:nth-child(even) { background-color: #f9f9f9; }
+  .header-card { background-color: #f4f4f4; border-left: 5px solid #e10600; padding: 10px 14px; margin-bottom: 14pt; }
+  .header-card table { margin: 0; }
+  .header-card td { border: none; padding: 3px 6px; font-size: 10pt; background: transparent; }
+  ul, ol { margin-top: 4pt; margin-bottom: 8pt; padding-left: 18pt; }
+  li { margin-bottom: 3pt; }
+  p { margin-top: 0; margin-bottom: 6pt; }
+  .footer-note { font-size: 9pt; color: #666666; margin-top: 20pt; border-top: 1px solid #dddddd; padding-top: 6pt; text-align: center; }
+</style>
+</head>
+<body>
+
+<div class='header-card'>
+  <table>
+    <tr><td><strong>Phase:</strong> Ideation Phase</td><td><strong>Author:</strong> Aaditya Vyas</td></tr>
+    <tr><td><strong>Project:</strong> Formula 1 Race Intelligence</td><td><strong>Date:</strong> October 2026</td></tr>
+    <tr><td><strong>Deliverable:</strong> Brainstorm & Idea Prioritization Template</td><td><strong>Max Marks:</strong> 4 Marks</td></tr>
+  </table>
+</div>
+
+<h1>Brainstorm & Idea Prioritization Template</h1>
+<p>Brainstorming provides an open environment that encourages rigorous exploration of motorsport telemetry challenges. Below is the structured ideation matrix created for the <strong>Formula 1 Race Intelligence</strong> project.</p>
+
+<h2>Step 1: Brainstorm and Idea Listing</h2>
+<table>
+  <tr><th>S.No</th><th>Team Member</th><th>Idea / Suggestion</th><th>Category</th><th>Group No.</th></tr>
+  <tr><td>1</td><td>Aaditya Vyas</td><td>Interactive hybrid-era Driver Performance Leaderboard indexing points and win rates across 6,464 race records (Lewis Hamilton 31,147 pts, Max Verstappen 31,126 pts).</td><td>Driver Analytics</td><td>1</td></tr>
+  <tr><td>2</td><td>Aaditya Vyas</td><td>Constructor Championship Supremacy analyzer tracking Red Bull Racing (8,006 pts) and Mercedes AMG (7,790 pts) points trajectories and title progression.</td><td>Team Analytics</td><td>1</td></tr>
+  <tr><td>3</td><td>Aaditya Vyas</td><td>Pirelli compound strategy breakdown examining 3,814 telemetry laps (Soft 31.52%, Medium 30.78%, Hard 30.36%, Intermediate 7.34%) for tire degradation windows.</td><td>Race Strategy</td><td>2</td></tr>
+  <tr><td>4</td><td>Aaditya Vyas</td><td>High-precision Pit Stop Execution analyzer benchmarking team stop times and evaluating undercut/overcut tactical windows (Ferrari record 2.18s avg).</td><td>Strategy & Telemetry</td><td>2</td></tr>
+  <tr><td>5</td><td>Aaditya Vyas</td><td>Global Grand Prix geographic distribution and circuit participation map across 29 worldwide championship circuits (Bahrain 2,168 logged outcomes).</td><td>Circuit Telemetry</td><td>3</td></tr>
+  <tr><td>6</td><td>Aaditya Vyas</td><td>DNF & Mechanical Reliability root-cause classifier analyzing powertrain, suspension, and collision retirements across circuits.</td><td>Reliability Analytics</td><td>4</td></tr>
+</table>
+
+<h2>Step 2: Idea Prioritization</h2>
+<table>
+  <tr><th>Group No.</th><th>Final Idea</th><th>Feasibility</th><th>Importance</th><th>Priority</th><th>Selected</th></tr>
+  <tr><td>1</td><td><strong>Driver & Constructor Performance Leaderboards</strong>: Modeling driver career points, win rates, podium conversions, and constructor battle trajectories.</td><td>High</td><td>High</td><td>P1</td><td><strong>Yes</strong></td></tr>
+  <tr><td>2</td><td><strong>Tire Compound Degradation & Pit Strategy Matrix</strong>: Pirelli compound share modeling combined with pit stop window analysis for race-pace optimization.</td><td>High</td><td>High</td><td>P2</td><td><strong>Yes</strong></td></tr>
+  <tr><td>3</td><td><strong>Global Geographic Circuit Distribution</strong>: Spatial footprint modeling across 29 world circuits linking outcome volume to weather conditions.</td><td>High</td><td>Medium</td><td>P3</td><td><strong>Yes</strong></td></tr>
+  <tr><td>4</td><td><strong>Driver Reliability & DNF Root-Cause Analysis</strong>: Mechanical versus collision retirement attribution modeling across street and permanent circuits.</td><td>Medium</td><td>High</td><td>P4</td><td><strong>Yes</strong></td></tr>
+</table>
+
+<div class='footer-note'>
+  Formula 1 Race Intelligence &bull; Author: Aaditya Vyas &bull; Phase Documentation
+</div>
+</body>
+</html>

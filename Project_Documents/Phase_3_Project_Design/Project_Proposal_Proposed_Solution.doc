@@ -1,0 +1,62 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset='utf-8'>
+<title>Project Design - Project Proposal</title>
+<style>
+  body { font-family: 'Calibri', 'Arial', sans-serif; font-size: 11pt; line-height: 1.5; color: #111111; }
+  h1 { font-size: 18pt; color: #e10600; border-bottom: 2px solid #e10600; padding-bottom: 6px; margin-top: 14pt; margin-bottom: 8pt; font-family: 'Arial', sans-serif; }
+  h2 { font-size: 13pt; color: #8b0000; border-bottom: 1px solid #cccccc; padding-bottom: 4px; margin-top: 12pt; margin-bottom: 6pt; }
+  h3 { font-size: 11.5pt; color: #111111; margin-top: 10pt; margin-bottom: 4pt; }
+  table { border-collapse: collapse; width: 100%; margin-top: 10pt; margin-bottom: 14pt; font-size: 10pt; }
+  th { background-color: #e10600; color: #ffffff; font-weight: bold; padding: 7px 9px; border: 1px solid #b30000; text-align: left; }
+  td { border: 1px solid #cccccc; padding: 6px 9px; vertical-align: top; }
+  tr:nth-child(even) { background-color: #f9f9f9; }
+  .header-card { background-color: #f4f4f4; border-left: 5px solid #e10600; padding: 10px 14px; margin-bottom: 14pt; }
+  .header-card table { margin: 0; }
+  .header-card td { border: none; padding: 3px 6px; font-size: 10pt; background: transparent; }
+  ul, ol { margin-top: 4pt; margin-bottom: 8pt; padding-left: 18pt; }
+  li { margin-bottom: 3pt; }
+  p { margin-top: 0; margin-bottom: 6pt; }
+  .footer-note { font-size: 9pt; color: #666666; margin-top: 20pt; border-top: 1px solid #dddddd; padding-top: 6pt; text-align: center; }
+</style>
+</head>
+<body>
+
+<div class='header-card'>
+  <table>
+    <tr><td><strong>Phase:</strong> Project Design Phase</td><td><strong>Author:</strong> Aaditya Vyas</td></tr>
+    <tr><td><strong>Project:</strong> Formula 1 Race Intelligence</td><td><strong>Date:</strong> October 2026</td></tr>
+    <tr><td><strong>Deliverable:</strong> Project Proposal Template</td><td><strong>Max Marks:</strong> 3 Marks</td></tr>
+  </table>
+</div>
+
+<h1>Project Proposal (Proposed Solution) Template</h1>
+<p>Comprehensive project proposal outlining the problem statement, proposed architectural solution, methodology, and resource allocations.</p>
+
+<h2>Project Overview & Objectives</h2>
+<p><strong>Primary Objective:</strong> Build an authoritative, broadcast-quality Formula 1 Race Intelligence platform transforming 6,464 race records into interactive Tableau dashboards and a high-performance web terminal.</p>
+<p><strong>Scope:</strong> Covers 17 seasons (2010–2026), 10 constructors, 19 drivers, 29 circuits, and 3,814 telemetry laps.</p>
+
+<h2>Methodology & Core Architecture</h2>
+<table>
+  <tr><th>Architectural Tier</th><th>Technologies</th><th>Deliverable & Role</th></tr>
+  <tr><td>Ingestion & ETL</td><td>Python 3.13, OpenPyXL</td><td>Extracts, cleans, and normalizes 5 sheets from F1 Racing Project Dataset.xlsx into clean JSON.</td></tr>
+  <tr><td>Data Modeling</td><td>Snowflake SQL / data.js</td><td>Prepares structured STAGING and CURATED layers with zero-CORS offline execution capability.</td></tr>
+  <tr><td>BI & Visualization</td><td>Tableau Public, Chart.js</td><td>Builds 8 core analytical panels, 7 story chapters, and 4 dynamic inline interactive charts.</td></tr>
+  <tr><td>Front-End Terminal</td><td>HTML5, CSS3, ES6+</td><td>Strict F1 Black & Red broadcast design system, animated SVG circuit, driver filters, and contact form.</td></tr>
+</table>
+
+<h2>Resource Requirements Table</h2>
+<table>
+  <tr><th>Resource Type</th><th>Description</th><th>Specification / Allocation</th></tr>
+  <tr><td>Hardware</td><td>Computing Resources & Memory</td><td>Standard Quad-Core CPU, 8 GB RAM, 1 GB Disk</td></tr>
+  <tr><td>Software Libraries</td><td>Scripting & Visualization</td><td>Python 3.13, OpenPyXL, Node.js, Chart.js, Font Awesome 6</td></tr>
+  <tr><td>Dataset</td><td>Formula 1 Project Data</td><td>F1 Racing Project Dataset.xlsx (6,464 outcomes, 3,814 laps, 29 circuits)</td></tr>
+  <tr><td>Personnel</td><td>Lead Engineer & Author</td><td><strong>Aaditya Vyas</strong> (Full-Stack Data Engineering & UI/UX Design)</td></tr>
+</table>
+
+<div class='footer-note'>
+  Formula 1 Race Intelligence &bull; Author: Aaditya Vyas &bull; Phase Documentation
+</div>
+</body>
+</html>

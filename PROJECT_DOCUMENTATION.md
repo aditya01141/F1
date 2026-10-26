@@ -7,13 +7,14 @@
 | Project Metadata Field | Implementation Detail |
 | :--- | :--- |
 | **Project Title** | Formula 1 Race Intelligence Dashboard |
-| **Author & Lead Developer** | **Atharv Prakash Malviya** |
-| **Tableau Public Profile** | `atharv malviya` ([Profile URL](https://public.tableau.com/app/profile/atharv.malviya)) |
+| **Author & Lead Developer** | **Aaditya Vyas** |
+| **Tableau Profile** | `Aaditya vyas` |
+| **GitHub Repository** | [`https://github.com/aditya01141/F1`](https://github.com/aditya01141/F1) |
 | **Published Workbook Name** | `F1 Race Intelligence Dashboard_2` |
 | **Dashboard Sheet Name** | `FORMULA 1 RACE INTELLIGENCE DASHBOARD` |
 | **Story Sheet Name** | `Formula 1 Race Intelligence: From Global Overview to Championship Success` (9 scenes) |
-| **Published Dashboard URL** | [Tableau Public Live Dashboard](https://public.tableau.com/views/F1RaceIntelligenceDashboard_2/FORMULA1RACEINTELLIGENCEDASHBOARD?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link) |
-| **Published Story URL** | [Tableau Public Live Story](https://public.tableau.com/shared/H8573444D?:display_count=n&:origin=viz_share_link) |
+| **Live Dashboard URL** | [Tableau Live Dashboard](https://prod-in-a.online.tableau.com/#/site/en25cs3090011-095899494d/views/F1RaceIntelligenceDashboard_2/FORMULA1RACEINTELLIGENCEDASHBOARD?:iid=1) |
+| **Live Story URL** | [Tableau Live Story](https://prod-in-a.online.tableau.com/#/site/en25cs3090011-095899494d/views/F1RACEStory/Formula1RaceIntelligenceFromGlobalOverviewtoChampionshipSuccess?:iid=3) |
 | **Dataset Source** | `F1 Racing Project Dataset.xlsx` (5 connected sheets, ~13,750 rows, 17 seasons: 2010–2026) |
 | **Web Service Stack** | Python 3.x, Flask, Jinja2, HTML5, CSS3, ES6+ Vanilla JS, Chart.js 4.4 |
 | **Date of Submission** | October 2026 |
@@ -38,16 +39,16 @@
 ## 1. Executive Summary & Problem Statement
 
 ### 1.1 Context
-Formula 1 is the pinnacle of motorsport engineering and high-frequency data collection. In modern Grand Prix racing, modern single-seaters are fitted with over 300 telemetry sensors generating millions of data samples per second. Race strategists and team principals must evaluate tire degradation curves, safety car probabilities, overtaking deltas, and power unit reliability across varying atmospheric conditions to make split-second championship decisions.
+Formula 1 is the pinnacle of motorsport engineering and telemetry data acquisition. During a typical Grand Prix weekend, contemporary hybrid power-unit single-seaters are fitted with over 300 telemetry sensors generating millions of data samples per minute. Race strategists, race engineers, and team principals must continuously evaluate tyre degradation curves, safety car probabilities, overtaking deltas, and power unit reliability across rapidly shifting track temperatures to make decisive championship calls.
 
 ### 1.2 The Problem
-Historically, motorsport performance data is scattered across disparate tables, legacy spreadsheets, and raw timing dumps. Analysts and fans face significant challenges:
-* **Siloed Data Sources**: Race results, circuit coordinates, qualifying margins, lap-by-lap tire compound telemetry, and championship points are stored independently without normalized logical joins.
-* **Lack of Dynamic Filtering**: Traditional static charts fail to let decision-makers isolate specific regulation cycles, explore attrition drivers (e.g., power unit versus collision DNFs), or dynamically rank the "Top N" drivers across hybrid regulation eras.
+Historically, motorsport performance data is fragmented across disparate timing sheets, legacy spreadsheets, and raw timing dumps. Analysts, journalists, and fans face three persistent obstacles:
+* **Siloed Relational Data**: Race results, circuit coordinates, qualifying margins, lap-by-lap tyre compound telemetry, and championship standings are collected independently without normalized relational joins.
+* **Lack of Dynamic Filtering**: Traditional static charts fail to let decision-makers isolate specific regulation cycles, explore attrition drivers (e.g., mechanical versus collision DNFs), or dynamically rank the "Top N" drivers across hybrid regulation eras.
 * **Disconnected User Experience**: Standalone BI workbooks frequently exist in isolation, lacking a unified command terminal that combines executive KPI summaries, responsive web embeds, and deep technical documentation.
 
 ### 1.3 The Solution: Formula 1 Race Intelligence
-Developed by **Atharv Prakash Malviya**, the **Formula 1 Race Intelligence** platform delivers an end-to-end telemetry analytics ecosystem. By combining Tableau Public's visual engine with a Python Flask service layer and a dark broadcast-aesthetic web interface, the system transforms **6,464 race outcomes across 17 seasons (2010–2026)** into executive-grade visual intelligence.
+Developed by **Aaditya Vyas**, the **Formula 1 Race Intelligence** platform delivers an end-to-end telemetry analytics ecosystem. By combining Tableau's visual analytical engine with a Python Flask service layer and a dark broadcast-aesthetic web interface, the system transforms **6,464 race outcomes across 17 seasons (2010–2026)** into executive-grade visual intelligence.
 
 ---
 
@@ -57,7 +58,7 @@ Developed by **Atharv Prakash Malviya**, the **Formula 1 Race Intelligence** pla
 2. **Interactive Telemetry Visualizations**: Author 9 distinct visual sheets capturing operational KPIs, geographic distribution, reliability breakdowns, tyre strategy distributions, and dynamic driver leaderboards.
 3. **Structured 9-Scene Narrative Story**: Guide stakeholders through an analytical journey from macro global participation down to driver-level podium conversion and championship supremacy.
 4. **Robust Global Controls**: Implement continuous date range filtering (`YEAR(Race Date)`), categorical multi-select filters (`Dnf Reason`), and dynamic integer parameters (`Top N Parameter`).
-5. **Production-Ready Web Deployment**: Embed the published Tableau Public workbook into an asynchronous, responsive Python Flask application featuring macOS-style window framing, animated metric counters, and live API endpoints.
+5. **Production-Ready Web Deployment**: Embed the published Tableau workbook into an asynchronous, responsive Python Flask application featuring macOS-style window framing, animated metric counters, and live API endpoints.
 
 ---
 
@@ -285,7 +286,7 @@ The dashboard follows the official **Formula 1 Broadcast & Telemetry Style Guide
 ### 6.2 Layout Wireframe
 ```
 +-----------------------------------------------------------------------------+
-| [F1 LOGO] FORMULA 1 RACE INTELLIGENCE DASHBOARD   | Author: Atharv Malviya |
+| [F1 LOGO] FORMULA 1 RACE INTELLIGENCE DASHBOARD   | Author: Aaditya Vyas   |
 +-----------------------------------------------------------------------------+
 | KPI 1: Teams (10) | KPI 2: Seasons (17) | KPI 3: Outcomes (6464) | KPI 4: Circuits (29) |
 +-----------------------------------------------------------------------------+
@@ -347,7 +348,7 @@ The web application is structured to support **dual-mode execution**:
 
 ### 9.1 Directory Tree
 ```
-e:\F1\F1-AI
+d:\repo1\F1
 ├── app.py                     # Primary Flask Web Server & API engine
 ├── templates/
 │   └── index.html             # Flask Jinja2 Web Template
@@ -366,11 +367,12 @@ e:\F1\F1-AI
 ### 9.2 Centralized URL Configuration in `app.py`
 ```python
 CONFIG = {
-    "AUTHOR_NAME": "Atharv Prakash Malviya",
-    "AUTHOR_HANDLE": "atharv malviya",
+    "AUTHOR_NAME": "Aaditya Vyas",
+    "AUTHOR_HANDLE": "Aaditya vyas",
+    "GITHUB_REPO": "https://github.com/aditya01141/F1",
     "WORKBOOK_NAME": "F1 Race Intelligence Dashboard_2",
-    "TABLEAU_DASHBOARD_URL": "https://public.tableau.com/views/F1RaceIntelligenceDashboard_2/FORMULA1RACEINTELLIGENCEDASHBOARD?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-    "TABLEAU_STORY_URL": "https://public.tableau.com/shared/H8573444D?:display_count=n&:origin=viz_share_link",
+    "TABLEAU_DASHBOARD_URL": "https://prod-in-a.online.tableau.com/#/site/en25cs3090011-095899494d/views/F1RaceIntelligenceDashboard_2/FORMULA1RACEINTELLIGENCEDASHBOARD?:iid=1",
+    "TABLEAU_STORY_URL": "https://prod-in-a.online.tableau.com/#/site/en25cs3090011-095899494d/views/F1RACEStory/Formula1RaceIntelligenceFromGlobalOverviewtoChampionshipSuccess?:iid=3",
     "KPIS": {
         "competing_teams": 10,
         "seasons_in_play": 17,
@@ -382,7 +384,7 @@ CONFIG = {
 
 ### 9.3 REST API Endpoints Provided
 * `GET /api/health` -> System health status and developer attribution.
-* `GET /api/config` -> Active Tableau Public embed URLs and author metadata.
+* `GET /api/config` -> Active Tableau embed URLs and author metadata.
 * `GET /api/telemetry` -> Summary KPIs and analytical dimensions.
 * `GET /api/circuits` -> Complete profile of all 29 world circuits.
 * `GET /api/drivers` -> Career telemetry metrics for active and historic drivers.
@@ -413,19 +415,15 @@ CONFIG = {
 2. Construct the 9 narrative scenes sequentially.
 3. Write analytical captions summarizing each scene's telemetry findings.
 
-### Step 5: Publishing to Tableau Public
-1. Click **Server -> Tableau Public -> Save to Tableau Public As...**.
-2. Sign in as **`atharv malviya`**.
-3. Save workbook as **`F1 Race Intelligence Dashboard_2`**.
-4. Set visibility settings to Public and enable interactive toolbars.
-5. Retrieve published URLs:
-   * Dashboard: `https://public.tableau.com/views/F1RaceIntelligenceDashboard_2/FORMULA1RACEINTELLIGENCEDASHBOARD...`
-   * Story: `https://public.tableau.com/shared/H8573444D...`
+### Step 5: Publishing & Linking
+1. Save and publish workbook to Tableau as **`F1 Race Intelligence Dashboard_2`**.
+2. Configure permissions to allow public viewing and interactive filter execution.
+3. Retrieve workbook URLs for both the Dashboard and the 9-Scene Story.
+4. Plug the URLs into `app.py` and `static/js/script.js`.
 
 ### Step 6: Web Application Integration
-1. Configure URLs in `app.py` and `static/js/script.js`.
-2. Run `python app.py` to start the Flask application.
-3. Verify live iframe loading and responsiveness at `http://127.0.0.1:5000`.
+1. Run `python app.py` to launch the Flask service layer.
+2. Access `http://127.0.0.1:5000` to verify live iframe rendering, macOS window framing, responsive resizing, and REST API health.
 
 ---
 
@@ -433,14 +431,14 @@ CONFIG = {
 
 | Evaluation Criterion | Implementation Status | Evidence / Verification |
 | :--- | :---: | :--- |
-| **Author Attribution** | Verified | **Atharv Prakash Malviya** credited across navbar, hero, cards, footer, APIs, and docs. |
-| **Live Tableau Integration**| Verified | Linked to `atharv malviya` workbook `F1 Race Intelligence Dashboard_2`. |
+| **Author Attribution** | Verified | **Aaditya Vyas** credited across navbar, hero, cards, footer, APIs, and docs. |
+| **Live Tableau Integration**| Verified | Linked to workbook `F1 Race Intelligence Dashboard_2`. |
 | **Dataset Completeness** | Verified | 6,464 race outcomes across 17 seasons, 29 circuits, 10 teams. |
 | **9 Visualizations** | Verified | KPI cards, Mapbox map, Reliability, Top N, Team rank, Championship, Tyre, Country, Podiums. |
 | **9-Scene Story** | Verified | 9 interactive chapters with dynamic context-aware telemetry captions. |
 | **Global Interactivity** | Verified | Continuous Date slider, DNF reason filter, dynamic Top N parameter (1–20). |
 | **Web Service Layer** | Verified | Python Flask backend (`app.py`), REST API endpoints, responsive CSS3/ES6+ UI. |
-| **Offline Compatibility** | Verified | Standalone `index.html` runs offline with pre-compiled `data.js`. |
+| **GitHub Deployment** | Verified | Pushed to GitHub repository [`https://github.com/aditya01141/F1`](https://github.com/aditya01141/F1). |
 
 ### Conclusion
-The **Formula 1 Race Intelligence Dashboard** successfully demonstrates how enterprise-grade business intelligence and modern web engineering can turn complex sports telemetry into clear, strategic narratives. Developed by **Atharv Prakash Malviya**, the platform stands as an authoritative, broadcast-ready analytics deliverable.
+The **Formula 1 Race Intelligence Dashboard** successfully demonstrates how enterprise-grade business intelligence and modern web engineering can turn complex sports telemetry into clear, strategic narratives. Developed by **Aaditya Vyas**, the platform stands as an authoritative, broadcast-ready analytics deliverable.

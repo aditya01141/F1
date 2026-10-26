@@ -1,0 +1,81 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset='utf-8'>
+<title>Project Development - Snowflake Data Preparation</title>
+<style>
+  body { font-family: 'Calibri', 'Arial', sans-serif; font-size: 11pt; line-height: 1.5; color: #111111; }
+  h1 { font-size: 18pt; color: #e10600; border-bottom: 2px solid #e10600; padding-bottom: 6px; margin-top: 14pt; margin-bottom: 8pt; font-family: 'Arial', sans-serif; }
+  h2 { font-size: 13pt; color: #8b0000; border-bottom: 1px solid #cccccc; padding-bottom: 4px; margin-top: 12pt; margin-bottom: 6pt; }
+  h3 { font-size: 11.5pt; color: #111111; margin-top: 10pt; margin-bottom: 4pt; }
+  table { border-collapse: collapse; width: 100%; margin-top: 10pt; margin-bottom: 14pt; font-size: 10pt; }
+  th { background-color: #e10600; color: #ffffff; font-weight: bold; padding: 7px 9px; border: 1px solid #b30000; text-align: left; }
+  td { border: 1px solid #cccccc; padding: 6px 9px; vertical-align: top; }
+  tr:nth-child(even) { background-color: #f9f9f9; }
+  .header-card { background-color: #f4f4f4; border-left: 5px solid #e10600; padding: 10px 14px; margin-bottom: 14pt; }
+  .header-card table { margin: 0; }
+  .header-card td { border: none; padding: 3px 6px; font-size: 10pt; background: transparent; }
+  pre { background-color: #1a1a1a; color: #ffffff; padding: 10px 14px; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 9.5pt; overflow-x: auto; }
+  code { font-family: 'Courier New', monospace; color: #e10600; font-size: 10pt; }
+  ul, ol { margin-top: 4pt; margin-bottom: 8pt; padding-left: 18pt; }
+  li { margin-bottom: 3pt; }
+  p { margin-top: 0; margin-bottom: 6pt; }
+  .footer-note { font-size: 9pt; color: #666666; margin-top: 20pt; border-top: 1px solid #dddddd; padding-top: 6pt; text-align: center; }
+</style>
+</head>
+<body>
+
+<div class='header-card'>
+  <table>
+    <tr><td><strong>Phase:</strong> Project Development (Snowflake)</td><td><strong>Author:</strong> Aaditya Vyas</td></tr>
+    <tr><td><strong>Project:</strong> Formula 1 Race Intelligence</td><td><strong>Date:</strong> October 2026</td></tr>
+    <tr><td><strong>Deliverable:</strong> Data Preparation Template</td><td><strong>Max Marks:</strong> 5 Marks</td></tr>
+  </table>
+</div>
+
+<h1>Data Preparation Template (Snowflake)</h1>
+<p>Documenting data cleansing, null treatment, deduplication, and transformation queries executed in Snowflake.</p>
+
+<h2>Activity 1: Null Value Handling</h2>
+<pre><code>-- Handle unclassified DNF entries
+UPDATE F1_DB.STAGING.STG_RACE_RESULTS
+SET dnf_reason = 'Technical Issue'
+WHERE dnf = TRUE AND (dnf_reason IS NULL OR TRIM(dnf_reason) = '');</code></pre>
+
+<h2>Activity 2: Deduplication Logic</h2>
+<pre><code>-- Deduplicate by season, round, and driver retaining best finishing position
+DELETE FROM F1_DB.STAGING.STG_RACE_RESULTS
+WHERE (race_id, driver) IN (
+    SELECT race_id, driver FROM (
+        SELECT race_id, driver,
+               ROW_NUMBER() OVER (PARTITION BY season, round, driver ORDER BY finish_position ASC) AS rn
+        FROM F1_DB.STAGING.STG_RACE_RESULTS
+    ) WHERE rn > 1
+);</code></pre>
+
+<h2>Activity 3: Data Standardization</h2>
+<pre><code>-- Fix encoding artifacts and remove synthetic placeholder drivers
+UPDATE F1_DB.STAGING.STG_RACE_RESULTS
+SET driver = 'Nico Hülkenberg'
+WHERE driver ILIKE '%Hlkenberg%';
+
+DELETE FROM F1_DB.STAGING.STG_RACE_RESULTS
+WHERE driver ILIKE 'Driver_%' OR team ILIKE 'Team_%';</code></pre>
+
+<h2>Activity 4: Curated Mart Creation</h2>
+<pre><code>-- Create Mart Driver Leaderboard with Win and Podium Conversion Rates
+CREATE OR REPLACE TABLE F1_DB.CURATED.MART_DRIVER_LEADERBOARD AS
+SELECT 
+    driver, team,
+    COUNT(race_id) AS total_races,
+    SUM(points) AS total_points,
+    COUNT(CASE WHEN finish_position = 1 THEN 1 END) AS total_wins,
+    COUNT(CASE WHEN finish_position IN (1, 2, 3) THEN 1 END) AS total_podiums,
+    ROUND((COUNT(CASE WHEN finish_position = 1 THEN 1 END) / COUNT(race_id)) * 100, 2) AS win_pct
+FROM F1_DB.STAGING.STG_RACE_RESULTS
+GROUP BY driver, team;</code></pre>
+
+<div class='footer-note'>
+  Formula 1 Race Intelligence &bull; Author: Aaditya Vyas &bull; Phase Documentation
+</div>
+</body>
+</html>

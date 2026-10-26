@@ -1,0 +1,54 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset='utf-8'>
+<title>Project Demonstration - Proposed Features</title>
+<style>
+  body { font-family: 'Calibri', 'Arial', sans-serif; font-size: 11pt; line-height: 1.5; color: #111111; }
+  h1 { font-size: 19pt; color: #e10600; border-bottom: 2px solid #e10600; padding-bottom: 6px; margin-top: 16pt; margin-bottom: 8pt; font-family: 'Arial', sans-serif; }
+  h2 { font-size: 13.5pt; color: #8b0000; border-bottom: 1px solid #cccccc; padding-bottom: 4px; margin-top: 12pt; margin-bottom: 6pt; }
+  h3 { font-size: 11.5pt; color: #111111; margin-top: 10pt; margin-bottom: 4pt; }
+  table { border-collapse: collapse; width: 100%; margin-top: 10pt; margin-bottom: 14pt; font-size: 10pt; }
+  th { background-color: #e10600; color: #ffffff; font-weight: bold; padding: 7px 9px; border: 1px solid #b30000; text-align: left; }
+  td { border: 1px solid #cccccc; padding: 6px 9px; vertical-align: top; }
+  tr:nth-child(even) { background-color: #f9f9f9; }
+  .header-card { background-color: #f4f4f4; border-left: 5px solid #e10600; padding: 10px 14px; margin-bottom: 14pt; }
+  .header-card table { margin: 0; }
+  .header-card td { border: none; padding: 3px 6px; font-size: 10pt; background: transparent; }
+  ul, ol { margin-top: 4pt; margin-bottom: 8pt; padding-left: 18pt; }
+  li { margin-bottom: 3pt; }
+  p { margin-top: 0; margin-bottom: 6pt; }
+  .footer-note { font-size: 9pt; color: #666666; margin-top: 20pt; border-top: 1px solid #dddddd; padding-top: 6pt; text-align: center; }
+</style>
+</head>
+<body>
+
+<div class='header-card'>
+  <table>
+    <tr><td><strong>Phase:</strong> Project Demonstration</td><td><strong>Presenter:</strong> Aaditya Vyas</td></tr>
+    <tr><td><strong>Project:</strong> Formula 1 Race Intelligence</td><td><strong>Date:</strong> October 2026</td></tr>
+    <tr><td><strong>Deliverable:</strong> Demonstration of Proposed Features</td><td><strong>Status:</strong> All Verified</td></tr>
+  </table>
+</div>
+
+<h1>Demonstration of Proposed Features</h1>
+<p>Comprehensive feature-by-feature verification script for the live demonstration of Formula 1 Race Intelligence.</p>
+
+<table>
+  <tr><th>Feature Module</th><th>Demonstration Step</th><th>System Behavior & Output</th><th>Status</th></tr>
+  <tr><td>1. F1 Start Preloader</td><td>Launch page in browser</td><td>5 red lights turn on sequentially, then turn off simultaneously with "LIGHTS OUT".</td><td><strong>PASS</strong></td></tr>
+  <tr><td>2. Hero Count-Up Stats</td><td>Observe hero section</td><td>Stats count up to 75+ Seasons, 1K+ Races, 20 Drivers, 10 Teams; skyline blends cleanly.</td><td><strong>PASS</strong></td></tr>
+  <tr><td>3. Animated SVG Track</td><td>Scroll to Project Overview</td><td>Red car dot moves around path; S1, S2, S3 markers and green DRS zone display.</td><td><strong>PASS</strong></td></tr>
+  <tr><td>4. Live Marquee Ticker</td><td>Inspect Dimensions section</td><td>Continuous marquee of real dataset facts; pauses on mouse hover.</td><td><strong>PASS</strong></td></tr>
+  <tr><td>5. Dashboard Window Frame</td><td>Navigate to #dashboard</td><td>macOS frame displays full 8-panel dashboard with zero-crop aspect ratio.</td><td><strong>PASS</strong></td></tr>
+  <tr><td>6. Story Point Navigator</td><td>Click numbered chips 1-7</td><td>Synced narrative captions update dynamically below the story frame.</td><td><strong>PASS</strong></td></tr>
+  <tr><td>7. Chart.js Visuals</td><td>Scroll to #insights-data</td><td>4 charts animate into view with custom F1 dark-themed tooltips.</td><td><strong>PASS</strong></td></tr>
+  <tr><td>8. Driver Grid Filtering</td><td>Search "Verstappen", filter 2023</td><td>Instant card filtration displaying 575 pts, 19 wins, and 1x Champion crown.</td><td><strong>PASS</strong></td></tr>
+  <tr><td>9. Lightbox Gallery</td><td>Click gallery item</td><td>High-res modal opens; keyboard navigation (arrows and Esc) verified.</td><td><strong>PASS</strong></td></tr>
+  <tr><td>10. Terminal Toast</td><td>Submit inquiry form</td><td>Transmitting spinner displays, followed by green success toast confirmation.</td><td><strong>PASS</strong></td></tr>
+</table>
+
+<div class='footer-note'>
+  Formula 1 Race Intelligence &bull; Author: Aaditya Vyas &bull; Phase Documentation
+</div>
+</body>
+</html>

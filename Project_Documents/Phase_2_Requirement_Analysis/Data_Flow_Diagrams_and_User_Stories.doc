@@ -1,0 +1,64 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset='utf-8'>
+<title>Requirement Analysis - DFD & User Stories</title>
+<style>
+  body { font-family: 'Calibri', 'Arial', sans-serif; font-size: 11pt; line-height: 1.5; color: #111111; }
+  h1 { font-size: 18pt; color: #e10600; border-bottom: 2px solid #e10600; padding-bottom: 6px; margin-top: 14pt; margin-bottom: 8pt; font-family: 'Arial', sans-serif; }
+  h2 { font-size: 13pt; color: #8b0000; border-bottom: 1px solid #cccccc; padding-bottom: 4px; margin-top: 12pt; margin-bottom: 6pt; }
+  h3 { font-size: 11.5pt; color: #111111; margin-top: 10pt; margin-bottom: 4pt; }
+  table { border-collapse: collapse; width: 100%; margin-top: 10pt; margin-bottom: 14pt; font-size: 10pt; }
+  th { background-color: #e10600; color: #ffffff; font-weight: bold; padding: 7px 9px; border: 1px solid #b30000; text-align: left; }
+  td { border: 1px solid #cccccc; padding: 6px 9px; vertical-align: top; }
+  tr:nth-child(even) { background-color: #f9f9f9; }
+  .header-card { background-color: #f4f4f4; border-left: 5px solid #e10600; padding: 10px 14px; margin-bottom: 14pt; }
+  .header-card table { margin: 0; }
+  .header-card td { border: none; padding: 3px 6px; font-size: 10pt; background: transparent; }
+  ul, ol { margin-top: 4pt; margin-bottom: 8pt; padding-left: 18pt; }
+  li { margin-bottom: 3pt; }
+  p { margin-top: 0; margin-bottom: 6pt; }
+  .footer-note { font-size: 9pt; color: #666666; margin-top: 20pt; border-top: 1px solid #dddddd; padding-top: 6pt; text-align: center; }
+</style>
+</head>
+<body>
+
+<div class='header-card'>
+  <table>
+    <tr><td><strong>Phase:</strong> Requirement Analysis</td><td><strong>Author:</strong> Aaditya Vyas</td></tr>
+    <tr><td><strong>Project:</strong> Formula 1 Race Intelligence</td><td><strong>Date:</strong> October 2026</td></tr>
+    <tr><td><strong>Deliverable:</strong> DFD & User Stories Template</td><td><strong>Max Marks:</strong> 4 Marks</td></tr>
+  </table>
+</div>
+
+<h1>Data Flow Diagram & User Stories</h1>
+<p>Documenting system information flow, process boundaries, data stores, and agile user stories for the Formula 1 Race Intelligence platform.</p>
+
+<h2>Data Flow Architecture Overview</h2>
+<table>
+  <tr><th>Element Type</th><th>Identifier</th><th>Name & Function</th></tr>
+  <tr><td>External Entity</td><td>EE-1</td><td>Motorsport Analyst / Race Strategist / Fan (Querying & viewing telemetry)</td></tr>
+  <tr><td>Process</td><td>P-1.0</td><td>Dataset Ingestion & Quality Validation (Validates Excel 5-sheet schema)</td></tr>
+  <tr><td>Process</td><td>P-2.0</td><td>ETL & Metric Aggregation (Aggregates 6,464 outcomes and 3,814 laps)</td></tr>
+  <tr><td>Process</td><td>P-3.0</td><td>Tableau Public Embedding & Fallback Rendering</td></tr>
+  <tr><td>Process</td><td>P-4.0</td><td>Interactive Web Application Engine (HTML5/CSS3/ES6+ client)</td></tr>
+  <tr><td>Data Store</td><td>D-1</td><td>Raw F1 Dataset Store (F1 Racing Project Dataset.xlsx)</td></tr>
+  <tr><td>Data Store</td><td>D-2</td><td>Normalized JSON & Offline Data Store (data.js)</td></tr>
+</table>
+
+<h2>Agile User Stories Matrix</h2>
+<table>
+  <tr><th>User Type</th><th>Functional Epic</th><th>USN</th><th>User Story / Task</th><th>Acceptance Criteria</th><th>Priority</th><th>Sprint</th></tr>
+  <tr><td>Analyst</td><td>KPI Overview</td><td>USN-01</td><td>View macro metrics upon landing on the terminal.</td><td>Display 10 Teams, 17 Seasons, 6,464 Outcomes, 29 Circuits with count-up.</td><td>High</td><td>Sprint-1</td></tr>
+  <tr><td>Strategist</td><td>Tire Intelligence</td><td>USN-02</td><td>Analyze Pirelli compound share across 3,814 laps.</td><td>Doughnut chart with Soft 31.52%, Medium 30.78%, Hard 30.36%, Inter 7.34%.</td><td>High</td><td>Sprint-1</td></tr>
+  <tr><td>Team Principal</td><td>Constructor Standings</td><td>USN-03</td><td>Compare points trajectories across 10 constructors.</td><td>Horizontal bar chart showing Red Bull (8,006 pts) and Mercedes (7,790 pts).</td><td>High</td><td>Sprint-1</td></tr>
+  <tr><td>Race Engineer</td><td>Reliability</td><td>USN-04</td><td>Examine DNF causes by driver to isolate powertrain faults.</td><td>Stacked bar chart of Mechanical, Collision, Engine, Gearbox, Electrical.</td><td>High</td><td>Sprint-2</td></tr>
+  <tr><td>Journalist</td><td>Storytelling</td><td>USN-05</td><td>Step through a narrative slideshow of findings.</td><td>7 clickable story chips that update descriptive commentary dynamically.</td><td>Medium</td><td>Sprint-2</td></tr>
+  <tr><td>Fan</td><td>Driver Exploration</td><td>USN-06</td><td>Search drivers and filter by career or specific seasons.</td><td>Real-time search bar + season dropdown updating driver cards instantly.</td><td>High</td><td>Sprint-2</td></tr>
+  <tr><td>Visitor</td><td>Inquiry Terminal</td><td>USN-07</td><td>Send inquiry to the paddock telemetry engineering group.</td><td>Client-side validated form with loading spinner and toast notification.</td><td>Low</td><td>Sprint-2</td></tr>
+</table>
+
+<div class='footer-note'>
+  Formula 1 Race Intelligence &bull; Author: Aaditya Vyas &bull; Phase Documentation
+</div>
+</body>
+</html>

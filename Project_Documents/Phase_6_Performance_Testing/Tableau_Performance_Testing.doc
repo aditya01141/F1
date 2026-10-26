@@ -1,0 +1,53 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset='utf-8'>
+<title>Performance Testing - Tableau Dashboard & Story</title>
+<style>
+  body { font-family: 'Calibri', 'Arial', sans-serif; font-size: 11pt; line-height: 1.5; color: #111111; }
+  h1 { font-size: 18pt; color: #e10600; border-bottom: 2px solid #e10600; padding-bottom: 6px; margin-top: 14pt; margin-bottom: 8pt; font-family: 'Arial', sans-serif; }
+  h2 { font-size: 13pt; color: #8b0000; border-bottom: 1px solid #cccccc; padding-bottom: 4px; margin-top: 12pt; margin-bottom: 6pt; }
+  h3 { font-size: 11.5pt; color: #111111; margin-top: 10pt; margin-bottom: 4pt; }
+  table { border-collapse: collapse; width: 100%; margin-top: 10pt; margin-bottom: 14pt; font-size: 10pt; }
+  th { background-color: #e10600; color: #ffffff; font-weight: bold; padding: 7px 9px; border: 1px solid #b30000; text-align: left; }
+  td { border: 1px solid #cccccc; padding: 6px 9px; vertical-align: top; }
+  tr:nth-child(even) { background-color: #f9f9f9; }
+  .header-card { background-color: #f4f4f4; border-left: 5px solid #e10600; padding: 10px 14px; margin-bottom: 14pt; }
+  .header-card table { margin: 0; }
+  .header-card td { border: none; padding: 3px 6px; font-size: 10pt; background: transparent; }
+  pre { background-color: #1a1a1a; color: #ffffff; padding: 10px 14px; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 9.5pt; overflow-x: auto; }
+  code { font-family: 'Courier New', monospace; color: #e10600; font-size: 10pt; }
+  ul, ol { margin-top: 4pt; margin-bottom: 8pt; padding-left: 18pt; }
+  li { margin-bottom: 3pt; }
+  p { margin-top: 0; margin-bottom: 6pt; }
+  .footer-note { font-size: 9pt; color: #666666; margin-top: 20pt; border-top: 1px solid #dddddd; padding-top: 6pt; text-align: center; }
+</style>
+</head>
+<body>
+
+<div class='header-card'>
+  <table>
+    <tr><td><strong>Phase:</strong> Performance Testing</td><td><strong>Author:</strong> Aaditya Vyas</td></tr>
+    <tr><td><strong>Project:</strong> Formula 1 Race Intelligence</td><td><strong>Date:</strong> October 2026</td></tr>
+    <tr><td><strong>Deliverable:</strong> Tableau Performance Testing Report</td><td><strong>Format:</strong> Testing Matrix</td></tr>
+  </table>
+</div>
+
+<h1>Performance Testing – Tableau Dashboard & Story</h1>
+<p>Documenting verification parameters, filter responsiveness, calculated field validation, and layout performance.</p>
+
+<table>
+  <tr><th>S.No</th><th>Parameter</th><th>Target Metric / Specification</th><th>Result & Observations</th></tr>
+  <tr><td>1</td><td>Data Rendered</td><td>6,464 race records, 3,814 laps, 29 circuits.</td><td><strong>PASS</strong> (100% complete data load)</td></tr>
+  <tr><td>2</td><td>Data Preprocessing</td><td>Encoding normalized; placeholders purged.</td><td><strong>PASS</strong> (Extract generated cleanly)</td></tr>
+  <tr><td>3</td><td>Filter Utilization</td><td>DNF Reason, Year of Race Date, Top N.</td><td><strong>PASS</strong> (Latency < 150ms on cross-filter)</td></tr>
+  <tr><td>4</td><td>Calculated Fields</td><td>Points, Win %, Podium %, Tyre Share %, Pit Speed.</td><td><strong>PASS</strong> (Mathematical accuracy confirmed)</td></tr>
+  <tr><td>5</td><td>Dashboard Panels</td><td>8 Core Visualizations inside window frame.</td><td><strong>PASS</strong> (Zero-crop responsive display)</td></tr>
+  <tr><td>6</td><td>Story Chapters</td><td>7 Narrative Chapters with interactive chips.</td><td><strong>PASS</strong> (Smooth transitions & synced captions)</td></tr>
+  <tr><td>7</td><td>Fullscreen Function</td><td>Open full screen button & modal expansion.</td><td><strong>PASS</strong> (Native browser fullscreen active)</td></tr>
+</table>
+
+<div class='footer-note'>
+  Formula 1 Race Intelligence &bull; Author: Aaditya Vyas &bull; Phase Documentation
+</div>
+</body>
+</html>

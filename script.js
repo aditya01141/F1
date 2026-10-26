@@ -1,15 +1,15 @@
 /**
  * FORMULA 1 RACE INTELLIGENCE - INTERACTIVE JAVASCRIPT
  * Comprehensive Frontend Engine & Telemetry Visualizer
- * Developed by: Atharv Prakash Malviya (Tableau Public: atharv malviya)
+ * Developed by: Aaditya Vyas (Tableau: Aaditya vyas | GitHub: aditya01141)
  */
 
 // =============================================================================
 // 1. TABLEAU PUBLIC EMBED CONFIGURATION
-// Configured for Atharv Prakash Malviya's Published Tableau Public Workbooks
+// Configured for Aaditya Vyas's Published Tableau Workbooks
 // =============================================================================
-const DASHBOARD_URL = "https://public.tableau.com/views/F1RaceIntelligenceDashboard_2/FORMULA1RACEINTELLIGENCEDASHBOARD?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link";
-const STORY_URL = "https://public.tableau.com/shared/H8573444D?:display_count=n&:origin=viz_share_link";
+const DASHBOARD_URL = "https://prod-in-a.online.tableau.com/#/site/en25cs3090011-095899494d/views/F1RaceIntelligenceDashboard_2/FORMULA1RACEINTELLIGENCEDASHBOARD?:iid=1";
+const STORY_URL = "https://prod-in-a.online.tableau.com/#/site/en25cs3090011-095899494d/views/F1RACEStory/Formula1RaceIntelligenceFromGlobalOverviewtoChampionshipSuccess?:iid=3";
 
 // 9 Story scenes definitions for interactive chapter navigator
 const STORY_POINTS_DATA = [
@@ -282,7 +282,10 @@ function initCounters() {
 // =============================================================================
 function formatTableauEmbedUrl(url) {
   if (!url) return "";
-  const base = url.split("?")[0].replace(/\/+$/, "");
+  let base = url.split("?")[0].replace(/\/+$/, "");
+  if (base.includes("/#/site/")) {
+    base = base.replace("/#/site/", "/t/");
+  }
   return `${base}?:embed=yes&:showVizHome=no&:toolbar=yes&:tabs=no&:showAppBanner=false`;
 }
 
@@ -308,7 +311,7 @@ function initTableauEmbeds() {
                 style="border:none; width:100%; min-height:860px; height:860px; display:block; background:#0a0a0f;"
                 allowfullscreen="true"
                 loading="lazy"
-                title="Tableau Public Formula 1 Race Intelligence Dashboard"></iframe>
+                title="Formula 1 Race Intelligence Dashboard | Aaditya Vyas"></iframe>
       </div>
     `;
   }
@@ -327,7 +330,7 @@ function initTableauEmbeds() {
                 style="border:none; width:100%; min-height:860px; height:860px; display:block; background:#0a0a0f;"
                 allowfullscreen="true"
                 loading="lazy"
-                title="Tableau Public Formula 1 Story"></iframe>
+                title="Formula 1 Race Intelligence Story | Aaditya Vyas"></iframe>
       </div>
     `;
   }

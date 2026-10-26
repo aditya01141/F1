@@ -1,0 +1,63 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset='utf-8'>
+<title>Requirement Analysis - Solution Requirements</title>
+<style>
+  body { font-family: 'Calibri', 'Arial', sans-serif; font-size: 11pt; line-height: 1.5; color: #111111; }
+  h1 { font-size: 18pt; color: #e10600; border-bottom: 2px solid #e10600; padding-bottom: 6px; margin-top: 14pt; margin-bottom: 8pt; font-family: 'Arial', sans-serif; }
+  h2 { font-size: 13pt; color: #8b0000; border-bottom: 1px solid #cccccc; padding-bottom: 4px; margin-top: 12pt; margin-bottom: 6pt; }
+  h3 { font-size: 11.5pt; color: #111111; margin-top: 10pt; margin-bottom: 4pt; }
+  table { border-collapse: collapse; width: 100%; margin-top: 10pt; margin-bottom: 14pt; font-size: 10pt; }
+  th { background-color: #e10600; color: #ffffff; font-weight: bold; padding: 7px 9px; border: 1px solid #b30000; text-align: left; }
+  td { border: 1px solid #cccccc; padding: 6px 9px; vertical-align: top; }
+  tr:nth-child(even) { background-color: #f9f9f9; }
+  .header-card { background-color: #f4f4f4; border-left: 5px solid #e10600; padding: 10px 14px; margin-bottom: 14pt; }
+  .header-card table { margin: 0; }
+  .header-card td { border: none; padding: 3px 6px; font-size: 10pt; background: transparent; }
+  ul, ol { margin-top: 4pt; margin-bottom: 8pt; padding-left: 18pt; }
+  li { margin-bottom: 3pt; }
+  p { margin-top: 0; margin-bottom: 6pt; }
+  .footer-note { font-size: 9pt; color: #666666; margin-top: 20pt; border-top: 1px solid #dddddd; padding-top: 6pt; text-align: center; }
+</style>
+</head>
+<body>
+
+<div class='header-card'>
+  <table>
+    <tr><td><strong>Phase:</strong> Requirement Analysis</td><td><strong>Author:</strong> Aaditya Vyas</td></tr>
+    <tr><td><strong>Project:</strong> Formula 1 Race Intelligence</td><td><strong>Date:</strong> October 2026</td></tr>
+    <tr><td><strong>Deliverable:</strong> Solution Requirements Template</td><td><strong>Max Marks:</strong> 4 Marks</td></tr>
+  </table>
+</div>
+
+<h1>Solution Requirements (Functional & Non-Functional)</h1>
+<p>Formal specification of business functional capabilities and non-functional engineering standards for Formula 1 Race Intelligence.</p>
+
+<h2>Functional Requirements (FR)</h2>
+<table>
+  <tr><th>FR No.</th><th>Functional Epic</th><th>Technical Specification</th><th>Priority</th></tr>
+  <tr><td>FR-1</td><td>Data Ingestion</td><td>Ingest and parse 5 sheets from Excel (6,464 race results, 3,814 laps, 311 standings, 29 circuits).</td><td>High</td></tr>
+  <tr><td>FR-2</td><td>Data Cleaning</td><td>Normalize team names, clean character encodings (Hülkenberg), and filter placeholder drivers.</td><td>High</td></tr>
+  <tr><td>FR-3</td><td>KPI Calculations</td><td>Compute career points, win rates, podium rates, tire compound percentages, and pit stop benchmarks.</td><td>High</td></tr>
+  <tr><td>FR-4</td><td>Interactive Charts</td><td>Render 4 responsive Chart.js visual charts with custom F1 dark-theme tooltips and legend controls.</td><td>High</td></tr>
+  <tr><td>FR-5</td><td>Tableau Embeds</td><td>Embed Tableau Public Dashboard and Story views with zero-crop fallbacks and fullscreen triggers.</td><td>High</td></tr>
+  <tr><td>FR-6</td><td>Grid Filters & Sort</td><td>Real-time driver search, multi-season filtering (2010–2026), and multi-criteria sorting.</td><td>High</td></tr>
+  <tr><td>FR-7</td><td>Story Navigator</td><td>7-point interactive chapter navigator updating narrative telemetry commentary dynamically.</td><td>Medium</td></tr>
+  <tr><td>FR-8</td><td>Contact Terminal</td><td>Client-side validated inquiry form with animated transmitting state and toast notification.</td><td>Medium</td></tr>
+</table>
+
+<h2>Non-Functional Requirements (NFR)</h2>
+<table>
+  <tr><th>NFR No.</th><th>Category</th><th>Engineering Standard & Metric</th></tr>
+  <tr><td>NFR-1</td><td>Usability</td><td>Strict F1 Black & Red broadcast design system (#0a0a0a, #e10600), Orbitron font, contrast >= 4.5:1.</td></tr>
+  <tr><td>NFR-2</td><td>Performance</td><td>FCP < 1.2s, 60fps CSS animations, lazy-loaded images, and Lighthouse score >= 90.</td></tr>
+  <tr><td>NFR-3</td><td>Offline Reliability</td><td>100% offline runnable on double-click via synchronous data.js to prevent file:// CORS errors.</td></tr>
+  <tr><td>NFR-4</td><td>Responsiveness</td><td>Seamless adaptation from 320px mobile screens to 4K ultra-wide monitors with hamburger menu.</td></tr>
+  <tr><td>NFR-5</td><td>Maintainability</td><td>Cleanly partitioned index.html, style.css, script.js, and data/ JSON files with full documentation.</td></tr>
+</table>
+
+<div class='footer-note'>
+  Formula 1 Race Intelligence &bull; Author: Aaditya Vyas &bull; Phase Documentation
+</div>
+</body>
+</html>

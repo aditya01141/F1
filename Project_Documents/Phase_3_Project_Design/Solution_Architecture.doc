@@ -1,0 +1,60 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset='utf-8'>
+<title>Project Design - Solution Architecture</title>
+<style>
+  body { font-family: 'Calibri', 'Arial', sans-serif; font-size: 11pt; line-height: 1.5; color: #111111; }
+  h1 { font-size: 18pt; color: #e10600; border-bottom: 2px solid #e10600; padding-bottom: 6px; margin-top: 14pt; margin-bottom: 8pt; font-family: 'Arial', sans-serif; }
+  h2 { font-size: 13pt; color: #8b0000; border-bottom: 1px solid #cccccc; padding-bottom: 4px; margin-top: 12pt; margin-bottom: 6pt; }
+  h3 { font-size: 11.5pt; color: #111111; margin-top: 10pt; margin-bottom: 4pt; }
+  table { border-collapse: collapse; width: 100%; margin-top: 10pt; margin-bottom: 14pt; font-size: 10pt; }
+  th { background-color: #e10600; color: #ffffff; font-weight: bold; padding: 7px 9px; border: 1px solid #b30000; text-align: left; }
+  td { border: 1px solid #cccccc; padding: 6px 9px; vertical-align: top; }
+  tr:nth-child(even) { background-color: #f9f9f9; }
+  .header-card { background-color: #f4f4f4; border-left: 5px solid #e10600; padding: 10px 14px; margin-bottom: 14pt; }
+  .header-card table { margin: 0; }
+  .header-card td { border: none; padding: 3px 6px; font-size: 10pt; background: transparent; }
+  ul, ol { margin-top: 4pt; margin-bottom: 8pt; padding-left: 18pt; }
+  li { margin-bottom: 3pt; }
+  p { margin-top: 0; margin-bottom: 6pt; }
+  .footer-note { font-size: 9pt; color: #666666; margin-top: 20pt; border-top: 1px solid #dddddd; padding-top: 6pt; text-align: center; }
+</style>
+</head>
+<body>
+
+<div class='header-card'>
+  <table>
+    <tr><td><strong>Phase:</strong> Project Design Phase</td><td><strong>Author:</strong> Aaditya Vyas</td></tr>
+    <tr><td><strong>Project:</strong> Formula 1 Race Intelligence</td><td><strong>Date:</strong> October 2026</td></tr>
+    <tr><td><strong>Deliverable:</strong> Solution Architecture Document</td><td><strong>Max Marks:</strong> 4 Marks</td></tr>
+  </table>
+</div>
+
+<h1>Solution Architecture</h1>
+<p>Comprehensive architectural breakdown detailing data ingestion, warehousing, analytical modeling, and presentation tiers.</p>
+
+<h2>Tiered Architectural Framework</h2>
+<ol>
+  <li><strong>Data Ingestion & Storage Tier:</strong> Ingests raw multi-sheet workbooks, performs validation, and formats data into Snowflake staging tables and local JSON data objects.</li>
+  <li><strong>Analytics & Visualization Tier:</strong> Leverages Snowflake SQL queries and Tableau Desktop to construct 8 multidimensional dashboards and a 7-point interactive story.</li>
+  <li><strong>Presentation Tier:</strong> Delivers an ultra-responsive web terminal built in HTML5, CSS3, and ES6+ vanilla JavaScript in a strict Formula 1 Black & Red broadcast design system.</li>
+</ol>
+
+<h2>Component Description Table</h2>
+<table>
+  <tr><th>Component Name</th><th>Description / Role in Architecture</th><th>Technology Used</th></tr>
+  <tr><td>Source Dataset</td><td>Raw repository containing 6,464 race results, 3,814 laps, and 29 circuits.</td><td>Excel (.xlsx)</td></tr>
+  <tr><td>ETL Pipeline</td><td>Extracts, cleans character artifacts, removes placeholder strings, and outputs JSON.</td><td>Python 3.13, OpenPyXL</td></tr>
+  <tr><td>Data Warehouse</td><td>Manages RAW, STAGING, and CURATED analytical marts for telemetry modeling.</td><td>Snowflake Cloud DW</td></tr>
+  <tr><td>Offline Data Store</td><td>Pre-compiled synchronous data store enabling zero-CORS double-click execution.</td><td>data.js (JSON)</td></tr>
+  <tr><td>Tableau BI Engine</td><td>Hosts the full-scale interactive dashboard and 7-part storytelling experience.</td><td>Tableau Public Server</td></tr>
+  <tr><td>Inline Charts</td><td>Renders 4 interactive charts (Leaderboard, Teams, Tyres, DNF reliability).</td><td>Chart.js 4.4</td></tr>
+  <tr><td>Vector Circuit Engine</td><td>Hardware-accelerated animated SVG track with traveling car dot and sector marks.</td><td>SVG / CSS3</td></tr>
+  <tr><td>Web Presentation</td><td>Single-page application featuring F1 start lights, live ticker, and driver filters.</td><td>HTML5 / CSS3 / ES6+</td></tr>
+</table>
+
+<div class='footer-note'>
+  Formula 1 Race Intelligence &bull; Author: Aaditya Vyas &bull; Phase Documentation
+</div>
+</body>
+</html>

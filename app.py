@@ -1,13 +1,14 @@
 """
 Formula 1 Race Intelligence Dashboard - Flask Application Engine
 ================================================================
-Author / Lead Developer: Atharv Prakash Malviya
-Tableau Public Profile : atharv malviya
-Published Workbook     : F1 Race Intelligence Dashboard_2
-Championship Story     : Formula 1 Race Intelligence: From Global Overview to Championship Success
+Author / Lead Developer: Aaditya Vyas
+Tableau Profile         : Aaditya vyas
+GitHub Repository       : https://github.com/aditya01141/F1
+Published Workbook      : F1 Race Intelligence Dashboard_2
+Championship Story      : Formula 1 Race Intelligence: From Global Overview to Championship Success
 
 This module serves the interactive Formula 1 Race Intelligence web application,
-providing dynamic rendering of the dark telemetry interface, embedded Tableau Public
+providing dynamic rendering of the dark telemetry interface, embedded Tableau
 visualizations, and RESTful telemetry data endpoints.
 """
 
@@ -30,18 +31,19 @@ app = Flask(
 )
 
 # ==============================================================================
-# CONFIGURATION SETTINGS & TABLEAU PUBLIC URLS
+# CONFIGURATION SETTINGS & TABLEAU WORKBOOK URLS
 # ==============================================================================
 CONFIG = {
-    "AUTHOR_NAME": "Atharv Prakash Malviya",
-    "AUTHOR_HANDLE": "atharv malviya",
+    "AUTHOR_NAME": "Aaditya Vyas",
+    "AUTHOR_HANDLE": "Aaditya vyas",
+    "GITHUB_REPO": "https://github.com/aditya01141/F1",
     "WORKBOOK_NAME": "F1 Race Intelligence Dashboard_2",
     "DASHBOARD_SHEET": "FORMULA 1 RACE INTELLIGENCE DASHBOARD",
     "STORY_SHEET": "Formula 1 Race Intelligence: From Global Overview to Championship Success",
     
-    # Live Tableau Public URLs provided by Atharv Prakash Malviya
-    "TABLEAU_DASHBOARD_URL": "https://public.tableau.com/views/F1RaceIntelligenceDashboard_2/FORMULA1RACEINTELLIGENCEDASHBOARD?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-    "TABLEAU_STORY_URL": "https://public.tableau.com/shared/H8573444D?:display_count=n&:origin=viz_share_link",
+    # Primary Interactive Tableau URLs
+    "TABLEAU_DASHBOARD_URL": "https://prod-in-a.online.tableau.com/#/site/en25cs3090011-095899494d/views/F1RaceIntelligenceDashboard_2/FORMULA1RACEINTELLIGENCEDASHBOARD?:iid=1",
+    "TABLEAU_STORY_URL": "https://prod-in-a.online.tableau.com/#/site/en25cs3090011-095899494d/views/F1RACEStory/Formula1RaceIntelligenceFromGlobalOverviewtoChampionshipSuccess?:iid=3",
     
     # 4 Core KPI Ground Truth
     "KPIS": {
@@ -56,35 +58,35 @@ CONFIG = {
         {
             "id": "circuits",
             "title": "Circuit Analysis",
-            "icon": "fa-solid fa-route",
-            "desc": "Track-by-track spatial and telemetry fingerprinting across 29 world circuits from Monza's high-speed straights to Bahrain's desert braking zones.",
+            "icon": "fa-solid fa-map-location-dot",
+            "desc": "Geographic and telemetry track profiling across 29 host circuits worldwide, contrasting high-downforce street layouts with high-speed power circuits.",
             "stat": "→ 29 HOST CIRCUITS MAPPED"
         },
         {
             "id": "lap_time",
             "title": "Lap Time Breakdown",
             "icon": "fa-solid fa-stopwatch-20",
-            "desc": "Millisecond-level telemetry analyzing sector splits (S1, S2, S3), qualifying delta margins, apex minimum speeds, and purple lap frequency.",
-            "stat": "→ MILLISECOND PRECISION & SECTOR SPLITS"
+            "desc": "Microsecond-precision telemetry breaking down Sector 1, Sector 2, and Sector 3 splits, apex cornering speeds, and qualifying delta margins.",
+            "stat": "→ MILLISECOND DELTA TELEMETRY"
         },
         {
             "id": "tyre_strategy",
             "title": "Tyre Strategy",
-            "icon": "fa-solid fa-compact-disc",
-            "desc": "Degradation curves and compound usage share across 4 official Pirelli specifications: Soft (31.52%), Medium (30.78%), Hard (30.36%), and Inter (7.34%).",
-            "stat": "→ 4 TELEMETRY COMPOUNDS IN PLAY"
+            "icon": "fa-solid fa-circle-notch",
+            "desc": "Compound degradation curves and allocation share across 4 Pirelli compounds: Soft (31.52%), Medium (30.78%), Hard (30.36%), and Inter (7.34%).",
+            "stat": "→ 4 PIRELLI COMPOUNDS IN PLAY"
         },
         {
             "id": "driver_h2h",
             "title": "Driver Head-to-Head",
-            "icon": "fa-solid fa-users-viewfinder",
-            "desc": "Dynamic Top-N parameter filtering ranking modern grid champions and telemetry outliers across career points, win rates, and podium conversion ratios.",
+            "icon": "fa-solid fa-user-ninja",
+            "desc": "Dynamic Top-N parameter ranking allowing real-time comparison of qualifying pace deltas, podium counts, and point progression across the modern grid.",
             "stat": "→ TOP N DYNAMIC FILTERING"
         },
         {
             "id": "points_progression",
             "title": "Points Progression",
-            "icon": "fa-solid fa-chart-line",
+            "icon": "fa-solid fa-arrow-trend-up",
             "desc": "Championship point curves tracking Red Bull Racing (8,006 pts) and Mercedes-AMG (7,790 pts) across 17 competitive seasons (2010–2026).",
             "stat": "→ 17 SEASONS (2010–2026)"
         },
@@ -92,7 +94,7 @@ CONFIG = {
             "id": "reliability",
             "title": "Weather & Safety Cars",
             "icon": "fa-solid fa-triangle-exclamation",
-            "desc": "DNF attrition diagnostics categorizing power unit, collision, and mechanical failures, highlighting the 91.4% modern grid completion benchmark.",
+            "desc": "DNF attrition diagnostics categorizing power unit, collision, transmission, and brake failures, benchmarking modern 91.4% grid completion.",
             "stat": "→ DNF REASON & ATTRITION DIAGNOSTICS"
         }
     ],
@@ -110,6 +112,19 @@ CONFIG = {
         {"id": 9, "title": "Team Performance Ranking", "summary": "Horizontal bar chart ranking all 10 constructors sorted descending by total accumulated points."}
     ]
 }
+
+
+def get_tableau_embed_url(url):
+    """
+    Intelligently formats a Tableau interactive URL into an iframe-compatible embed URL.
+    Handles Tableau Cloud/Server (/#/site/ -> /t/) and Tableau Public URL structures.
+    """
+    if not url:
+        return ""
+    clean_url = url.split("?")[0].rstrip("/")
+    if "/#/site/" in clean_url:
+        clean_url = clean_url.replace("/#/site/", "/t/")
+    return f"{clean_url}?:embed=yes&:showVizHome=no&:toolbar=yes&:tabs=no&:showAppBanner=false"
 
 
 def load_json_file(filename):
@@ -138,13 +153,19 @@ INSIGHTS_DATA = load_json_file('insights.json')
 @app.route('/')
 def index():
     """Render the primary Formula 1 Race Intelligence Dashboard."""
+    dashboard_embed = get_tableau_embed_url(CONFIG["TABLEAU_DASHBOARD_URL"])
+    story_embed = get_tableau_embed_url(CONFIG["TABLEAU_STORY_URL"])
+    
     return render_template(
         'index.html',
         author_name=CONFIG["AUTHOR_NAME"],
         author_handle=CONFIG["AUTHOR_HANDLE"],
+        github_repo=CONFIG["GITHUB_REPO"],
         workbook_name=CONFIG["WORKBOOK_NAME"],
         tableau_dashboard_url=CONFIG["TABLEAU_DASHBOARD_URL"],
         tableau_story_url=CONFIG["TABLEAU_STORY_URL"],
+        tableau_dashboard_embed_url=dashboard_embed,
+        tableau_story_embed_url=story_embed,
         kpis=CONFIG["KPIS"],
         dimensions=CONFIG["DIMENSIONS"],
         story_scenes=CONFIG["STORY_SCENES"]
@@ -161,10 +182,13 @@ def get_config():
     return jsonify({
         "status": "success",
         "author": CONFIG["AUTHOR_NAME"],
-        "tableau_public_profile": f"https://public.tableau.com/app/profile/{CONFIG['AUTHOR_HANDLE'].replace(' ', '.')}",
+        "tableau_profile": CONFIG["AUTHOR_HANDLE"],
+        "github_repo": CONFIG["GITHUB_REPO"],
         "workbook_name": CONFIG["WORKBOOK_NAME"],
         "tableau_dashboard_url": CONFIG["TABLEAU_DASHBOARD_URL"],
         "tableau_story_url": CONFIG["TABLEAU_STORY_URL"],
+        "tableau_dashboard_embed_url": get_tableau_embed_url(CONFIG["TABLEAU_DASHBOARD_URL"]),
+        "tableau_story_embed_url": get_tableau_embed_url(CONFIG["TABLEAU_STORY_URL"]),
         "kpis": CONFIG["KPIS"]
     })
 
@@ -227,7 +251,8 @@ if __name__ == '__main__':
     print(f"================================================================")
     print(f"🏎️ FORMULA 1 RACE INTELLIGENCE DASHBOARD")
     print(f"   Lead Architect : {CONFIG['AUTHOR_NAME']}")
-    print(f"   Tableau Public : {CONFIG['AUTHOR_HANDLE']}")
+    print(f"   Tableau Profile: {CONFIG['AUTHOR_HANDLE']}")
+    print(f"   GitHub Repo    : {CONFIG['GITHUB_REPO']}")
     print(f"   Listening on   : http://127.0.0.1:{port}")
     print(f"================================================================")
     app.run(host='0.0.0.0', port=port, debug=True)

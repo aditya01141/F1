@@ -1,0 +1,84 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset='utf-8'>
+<title>Requirement Analysis - Customer Journey Map</title>
+<style>
+  body { font-family: 'Calibri', 'Arial', sans-serif; font-size: 11pt; line-height: 1.5; color: #111111; }
+  h1 { font-size: 18pt; color: #e10600; border-bottom: 2px solid #e10600; padding-bottom: 6px; margin-top: 14pt; margin-bottom: 8pt; font-family: 'Arial', sans-serif; }
+  h2 { font-size: 13pt; color: #8b0000; border-bottom: 1px solid #cccccc; padding-bottom: 4px; margin-top: 12pt; margin-bottom: 6pt; }
+  h3 { font-size: 11.5pt; color: #111111; margin-top: 10pt; margin-bottom: 4pt; }
+  table { border-collapse: collapse; width: 100%; margin-top: 10pt; margin-bottom: 14pt; font-size: 10pt; }
+  th { background-color: #e10600; color: #ffffff; font-weight: bold; padding: 7px 9px; border: 1px solid #b30000; text-align: left; }
+  td { border: 1px solid #cccccc; padding: 6px 9px; vertical-align: top; }
+  tr:nth-child(even) { background-color: #f9f9f9; }
+  .header-card { background-color: #f4f4f4; border-left: 5px solid #e10600; padding: 10px 14px; margin-bottom: 14pt; }
+  .header-card table { margin: 0; }
+  .header-card td { border: none; padding: 3px 6px; font-size: 10pt; background: transparent; }
+  ul, ol { margin-top: 4pt; margin-bottom: 8pt; padding-left: 18pt; }
+  li { margin-bottom: 3pt; }
+  p { margin-top: 0; margin-bottom: 6pt; }
+  .footer-note { font-size: 9pt; color: #666666; margin-top: 20pt; border-top: 1px solid #dddddd; padding-top: 6pt; text-align: center; }
+</style>
+</head>
+<body>
+
+<div class='header-card'>
+  <table>
+    <tr><td><strong>Phase:</strong> Requirement Analysis</td><td><strong>Author:</strong> Aaditya Vyas</td></tr>
+    <tr><td><strong>Project:</strong> Formula 1 Race Intelligence</td><td><strong>Date:</strong> October 2026</td></tr>
+    <tr><td><strong>Deliverable:</strong> Customer Journey Map</td><td><strong>Format:</strong> Structured Matrix</td></tr>
+  </table>
+</div>
+
+<h1>Customer Journey Map</h1>
+<p>Mapping user actions, touchpoints, mindset, and pain-relief opportunities across the lifecycle of the Formula 1 Race Intelligence platform.</p>
+
+<table>
+  <tr><th>Journey Stage</th><th>User Actions</th><th>Touchpoints</th><th>Thoughts & Mindset</th><th>Emotional State</th><th>Opportunities & Implemented Features</th></tr>
+  <tr>
+    <td><strong>1. Discovery & Launch</strong></td>
+    <td>Opens site in browser or double-clicks offline index.html.</td>
+    <td>Preloader, Hero Section, Navbar</td>
+    <td>"Needs to load fast with zero login barriers or broken CDN links."</td>
+    <td>Impressed</td>
+    <td>F1 5-light start sequence, instant count-up stats (75+ seasons, 1K+ races, 20 drivers, 10 teams).</td>
+  </tr>
+  <tr>
+    <td><strong>2. System Orientation</strong></td>
+    <td>Observes live marquee ticker and animated circuit model.</td>
+    <td>Project Overview, Animated SVG Circuit</td>
+    <td>"The animated DRS and sector markers show authentic racing architecture."</td>
+    <td>Engaged</td>
+    <td>Animated SVG track with glowing car dot, continuous live telemetry marquee, 6 dimension cards.</td>
+  </tr>
+  <tr>
+    <td><strong>3. Deep Telemetry Analysis</strong></td>
+    <td>Interacts with Tableau Dashboard and Story narrative.</td>
+    <td>Dashboard Frame, Story Point Chips</td>
+    <td>"Can I examine driver reliability, tire usage, and constructor points in one view?"</td>
+    <td>Analytical</td>
+    <td>Full 8-panel dashboard frame, 7-point interactive chapter navigator, fullscreen mode.</td>
+  </tr>
+  <tr>
+    <td><strong>4. Driver & Grid Telemetry</strong></td>
+    <td>Searches specific drivers, filters by season (2010–2026), and sorts.</td>
+    <td>Driver Search Box, Season Dropdown, Driver Cards</td>
+    <td>"How do Verstappen's points compare to Hamilton's hybrid peak?"</td>
+    <td>Empowered</td>
+    <td>Live search filter, team color stripes, champion crown badges, win rate progress bars.</td>
+  </tr>
+  <tr>
+    <td><strong>5. Terminal Inquiry</strong></td>
+    <td>Fills contact form for telemetry model consulting.</td>
+    <td>Contact Glass Card, Social Links</td>
+    <td>"I want to connect with the engineering lead for custom data pipeline work."</td>
+    <td>Connected</td>
+    <td>Client-side validated form, animated loading state, green success toast feedback.</td>
+  </tr>
+</table>
+
+<div class='footer-note'>
+  Formula 1 Race Intelligence &bull; Author: Aaditya Vyas &bull; Phase Documentation
+</div>
+</body>
+</html>

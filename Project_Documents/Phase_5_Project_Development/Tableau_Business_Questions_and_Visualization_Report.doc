@@ -1,0 +1,95 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset='utf-8'>
+<title>Project Development - Tableau Business Questions</title>
+<style>
+  body { font-family: 'Calibri', 'Arial', sans-serif; font-size: 11pt; line-height: 1.5; color: #111111; }
+  h1 { font-size: 18pt; color: #e10600; border-bottom: 2px solid #e10600; padding-bottom: 6px; margin-top: 14pt; margin-bottom: 8pt; font-family: 'Arial', sans-serif; }
+  h2 { font-size: 13pt; color: #8b0000; border-bottom: 1px solid #cccccc; padding-bottom: 4px; margin-top: 12pt; margin-bottom: 6pt; }
+  h3 { font-size: 11.5pt; color: #111111; margin-top: 10pt; margin-bottom: 4pt; }
+  table { border-collapse: collapse; width: 100%; margin-top: 10pt; margin-bottom: 14pt; font-size: 10pt; }
+  th { background-color: #e10600; color: #ffffff; font-weight: bold; padding: 7px 9px; border: 1px solid #b30000; text-align: left; }
+  td { border: 1px solid #cccccc; padding: 6px 9px; vertical-align: top; }
+  tr:nth-child(even) { background-color: #f9f9f9; }
+  .header-card { background-color: #f4f4f4; border-left: 5px solid #e10600; padding: 10px 14px; margin-bottom: 14pt; }
+  .header-card table { margin: 0; }
+  .header-card td { border: none; padding: 3px 6px; font-size: 10pt; background: transparent; }
+  pre { background-color: #1a1a1a; color: #ffffff; padding: 10px 14px; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 9.5pt; overflow-x: auto; }
+  code { font-family: 'Courier New', monospace; color: #e10600; font-size: 10pt; }
+  ul, ol { margin-top: 4pt; margin-bottom: 8pt; padding-left: 18pt; }
+  li { margin-bottom: 3pt; }
+  p { margin-top: 0; margin-bottom: 6pt; }
+  .footer-note { font-size: 9pt; color: #666666; margin-top: 20pt; border-top: 1px solid #dddddd; padding-top: 6pt; text-align: center; }
+</style>
+</head>
+<body>
+
+<div class='header-card'>
+  <table>
+    <tr><td><strong>Phase:</strong> Project Development (Tableau)</td><td><strong>Author:</strong> Aaditya Vyas</td></tr>
+    <tr><td><strong>Project:</strong> Formula 1 Race Intelligence</td><td><strong>Date:</strong> October 2026</td></tr>
+    <tr><td><strong>Deliverable:</strong> Business Questions & Visualization Report</td><td><strong>Max Marks:</strong> 5 Marks</td></tr>
+  </table>
+</div>
+
+<h1>Business Question and Visualization Report</h1>
+<p>Documenting the 8 primary business telemetry questions, visualization types, empirical findings, and dashboard panel mappings.</p>
+
+<h2>Eight Core Business Questions & Visualizations</h2>
+<table>
+  <tr><th>No.</th><th>Business Telemetry Question</th><th>Visualization Type</th><th>Empirical Dataset Finding</th></tr>
+  <tr>
+    <td><strong>BQ-1</strong></td>
+    <td>What is the geographic distribution of Grand Prix entries across host nations?</td>
+    <td>Filled Chloropleth World Map</td>
+    <td>USA (400), Spain (328), Monaco (328), Canada (308), Brazil (308), Singapore (288).</td>
+  </tr>
+  <tr>
+    <td><strong>BQ-2</strong></td>
+    <td>How do mechanical vs accident retirements distribute across drivers?</td>
+    <td>Stacked Column Bar Chart</td>
+    <td>Mechanical failures drive 68% of technical DNFs; street circuits account for 64% of SC events.</td>
+  </tr>
+  <tr>
+    <td><strong>BQ-3</strong></td>
+    <td>Who dominates total performance index points in the hybrid era?</td>
+    <td>Vertical Ranked Bar Chart</td>
+    <td>Lewis Hamilton leads with 31,147 pts; Max Verstappen closely follows with 31,126 pts.</td>
+  </tr>
+  <tr>
+    <td><strong>BQ-4</strong></td>
+    <td>Which constructors lead cumulative championship points?</td>
+    <td>Horizontal Team Bar Chart</td>
+    <td>Red Bull Racing leads with 8,006 pts, followed by Mercedes (7,790) and Ferrari (5,778).</td>
+  </tr>
+  <tr>
+    <td><strong>BQ-5</strong></td>
+    <td>How do team points progress across annual championship cycles?</td>
+    <td>Championship Standings Bar</td>
+    <td>Red Bull and Mercedes have captured over 52% of all constructor points since 2014.</td>
+  </tr>
+  <tr>
+    <td><strong>BQ-6</strong></td>
+    <td>What is the proportional utilization of Pirelli tire compounds?</td>
+    <td>Donut / Pie Share Chart</td>
+    <td>Soft: 31.52% (1,202 laps), Medium: 30.78% (1,174 laps), Hard: 30.36%, Inter: 7.34%.</td>
+  </tr>
+  <tr>
+    <td><strong>BQ-7</strong></td>
+    <td>Which countries log the highest Grand Prix participation volume?</td>
+    <td>Treemap Size-Weighted Chart</td>
+    <td>Bahrain leads with 2,168 logged outcomes, followed by Hungary, Monaco, and Spain.</td>
+  </tr>
+  <tr>
+    <td><strong>BQ-8</strong></td>
+    <td>How do top-3 podium finishes cluster across driver-team pairings?</td>
+    <td>Packed Bubble Chart</td>
+    <td>Dense dominant clusters for Hamilton/Mercedes and Verstappen/Red Bull Racing.</td>
+  </tr>
+</table>
+
+<div class='footer-note'>
+  Formula 1 Race Intelligence &bull; Author: Aaditya Vyas &bull; Phase Documentation
+</div>
+</body>
+</html>
